@@ -1,10 +1,10 @@
 # WBDV111_MidtermLabExam-Jun-sCutSalonandBarbershop
 
-Bonotan, Benzjohn T.
-Almira, Arvin
-Caban, Paul Andrew
-BSIT 1-Y2-2
-
+- Bonotan, Benzjohn T. 
+- Almira, Arvin 
+- Caban, Paul Andrew
+- Section: BSIT 1-Y2-2
+#
 We made a website about Salon and Barbershop where we display the Home, About, Features and Contacts.
 We implemented a small interaction when clicking the navigation bar, we displayed images, designed the website using CSS.
 HTML and CSS were only used on this so far.
