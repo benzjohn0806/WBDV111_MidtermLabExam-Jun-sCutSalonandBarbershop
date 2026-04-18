@@ -36,8 +36,8 @@ header .navbar {
 }
 
 .logo {
-    width: 500px;
-    height: 100px;
+    width: auto;
+    height: 60px;
     border-radius: 15%;
     display: block;
     margin: 10px auto;
@@ -45,6 +45,8 @@ header .navbar {
 
 .navbar .logo {
     display: flex;
+    height: 50px
+    width: auto;
     align-items: center;
     justify-content: space-between;
 }
