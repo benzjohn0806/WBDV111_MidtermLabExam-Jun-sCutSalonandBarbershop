@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jun's Cut Salon and Barbershop</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/jpg" href="image/favicon.jpg">
+    <link rel="icon" type="image/jpg" href="./favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
@@ -14,11 +14,14 @@
     <header>
         <nav class="navbar">
             <a href="#home" class="nav-logo">
-                <img src="image/junscut.jpg" alt="Logo" class="logo">
+                <img src="./junscut.jpg" alt="Logo" class="logo">
             </a>
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
                     <a href="#features" class="nav-link">Features</a>
@@ -43,19 +46,19 @@
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero-section">
-            <div class="left-side-content">
+            <div class="centered-content">
                 <h1>Welcome to Jun's Cut Salon and Barbershop!</h1>
                 <p>From classic cuts to modern styles, we're here to make sure you leave the chair looking and
                     feeling your absolute best.</p>
+                    <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Contact Us</a>
+                </div>
             </div>
         </section>
 
@@ -68,7 +71,7 @@
                     <span class="tag">ABOUT OUR SALON</span>
                     <h2>Beauty, Confidence & Care</h2>
                     <p>
-                        At Jun's Cut Salon & Barbershop, we believe self-care is more than
+                        Jun's Cut Salon & Barbershop was established in 2025, we believe self-care is more than
                         a luxury, it's a lifestyle. Our studio offers professional hair,
                         nails, eyelash, waxing, facial, and gluta services designed to help
                         you look and feel your best.
@@ -435,7 +438,6 @@
                     </div>
                 </div>
             </div>
-          <h3 class="footer-text">© 2026 Jun's Cut Salon and Barbershop. All Rights Reserved.</h3>
         </section>
     </main>
 
@@ -484,9 +486,52 @@
 
         const bookingForm = document.getElementById('bookingForm');
         const bookingSuccess = document.getElementById('bookingSuccess');
+        const phoneInput = document.getElementById('phone');
+        const fullNameInput = document.getElementById('fullName');
+
+        fullNameInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        });
+
+        fullNameInput.addEventListener('keydown', function(e) {
+            if (e.key === ' ') {
+                return;
+            }
+            if (!/^[a-zA-Z]$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
+                e.preventDefault();
+            }
+        });
+
+        phoneInput.addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '');
+            if (this.value.length > 11) {
+                this.value = this.value.slice(0, 11);
+            }
+        });
+
+        phoneInput.addEventListener('keydown', function(e) {
+            if (!/^\d$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
+                e.preventDefault();
+            }
+        });
 
         bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            const phoneValue = phoneInput.value;
+            const nameValue = fullNameInput.value.trim();
+            
+            if (nameValue === '') {
+                alert('Please enter your full name.');
+                fullNameInput.focus();
+                return;
+            }
+            
+            if (phoneValue.length < 10 || phoneValue.length > 11) {
+                alert('Please enter a valid phone number (10-11 digits).');
+                phoneInput.focus();
+                return;
+            }
             
             bookingForm.style.display = 'none';
             bookingSuccess.style.display = 'block';
