@@ -240,30 +240,33 @@ header .navbar {
 }
 
 .hero-section {
-    height: 81vh;
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+    /* prevents navbar overlap */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
 }
 
 .centered-content h1 {
     font-family: "Lora", sans-serif;
-    font-size: 75px;
+    font-size: clamp(32px, 6vw, 72px);
+    /* responsive scaling */
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
-    margin: 0 auto 50px auto;
-    max-width: 5000px;
+    margin: 0 auto 20px auto;
+    padding: 0 15px;
 }
 
 .centered-content p {
     font-family: "Lora", sans-serif;
-    font-size: 20px;
-    line-height: 1.7;
-    max-width: 900px;
+    font-size: clamp(14px, 2.5vw, 20px);
+    line-height: 1.6;
+    max-width: 700px;
     text-align: center;
-    margin: -30px auto 10px auto;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .centered-content {
