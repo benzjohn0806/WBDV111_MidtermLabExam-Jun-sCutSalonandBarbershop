@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jun's Cut Salon and Barbershop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="./favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="booking.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="nav-logo">
+                <img src="./junscut.jpg" alt="Logo" class="logo">
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="features.html" class="nav-link">Features</a>
+                </li>
+                <li class="nav-item dropdown-nav">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="services.html" data-category="hair">Hair Services</a></li>
+                        <li><a href="services.html" data-category="color">Color Services</a></li>
+                        <li><a href="services.html" data-category="brazilian">Brazilian & Rebond</a></li>
+                        <li><a href="services.html" data-category="treatment">Treatment</a></li>
+                        <li><a href="services.html" data-category="removal">Removal Services</a></li>
+                        <li><a href="services.html" data-category="nail">Nail Care</a></li>
+                        <li><a href="services.html" data-category="addons">Add-Ons</a></li>
+                        <li><a href="services.html" data-category="waxing">Waxing</a></li>
+                        <li><a href="services.html" data-category="other">Other Services</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="book.html" class="nav-link">Book Now</a>
+                </li>
+                <li class="nav-item">
+                    <a href="<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jun's Cut Salon and Barbershop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="./favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="booking.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="nav-logo">
+                <img src="./junscut.jpg" alt="Logo" class="logo">
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="features.html" class="nav-link">Features</a>
+                </li>
+                <li class="nav-item dropdown-nav">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="services.html" data-category="hair">Hair Services</a></li>
+                        <li><a href="services.html" data-category="color">Color Services</a></li>
+                        <li><a href="services.html" data-category="brazilian">Brazilian & Rebond</a></li>
+                        <li><a href="services.html" data-category="treatment">Treatment</a></li>
+                        <li><a href="services.html" data-category="removal">Removal Services</a></li>
+                        <li><a href="services.html" data-category="nail">Nail Care</a></li>
+                        <li><a href="services.html" data-category="addons">Add-Ons</a></li>
+                        <li><a href="services.html" data-category="waxing">Waxing</a></li>
+                        <li><a href="services.html" data-category="other">Other Services</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="book.html" class="nav-link">Book Now</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contacts.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+            <main>
+            <section id="book" class="booking-section">
+            <div class="booking-container">
+                <h2>Book a Reservation</h2>
+                <p class="booking-subtitle">Schedule your appointment with us today!</p>
+
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Type *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="haircut-men">Hair Cut Men - Php 120</option>
+                            <option value="haircut-women">Hair Cut Women - Php 150</option>
+                            <option value="hair-iron">Hair Iron - Php 250</option>
+                            <option value="coldwave">Coldwave - Php 600+</option>
+                            <option value="hair-color">Hair Color - Php 1,000+</option>
+                            <option value="brazilian">Brazilian - Php 800+</option>
+                            <option value="rebond">Rebond - Php 1,200+</option>
+                            <option value="treatment">Treatment - Php 250+</option>
+                            <option value="manicure">Manicure - Php 120+</option>
+                            <option value="pedicure">Pedicure - Php 130+</option>
+                            <option value="soft-gel">Soft Gel - Php 899+</option>
+                            <option value="waxing">Waxing - Php 250+</option>
+                            <option value="eyelash">Eyelash Services - Php 500+</option>
+                            <option value="foot-spa">Foot Spa - Php 250+</option>
+                            <option value="makeup">Hair & Makeup - Php 800</option>
+                            <option value="other">Other Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Preferred Time *</label>
+                        <select id="time" name="time" required>
+                            <option value="">Select a time</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="15:30">3:30 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="16:30">4:30 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Special Requests or Notes</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Any special requests or additional information..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Book Appointment</button>
+                </form>
+
+                <div class="booking-success" id="bookingSuccess" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Booking Submitted!</h3>
+                    <p>Thank you for your reservation. We will confirm your appointment shortly.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+        <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdownNav = document.querySelectorAll('.dropdown-nav');
+
+        /* TOGGLE MENU */
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        dropdownNav.forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+
+                    dropdownNav.forEach(i => {
+                        if (i !== item) i.classList.remove('active');
+                    });
+
+                    item.classList.toggle('active');
+                }
+            });
+        });
+
+
+        const dropdowns = document.querySelectorAll('.dropdown');
+        const navDropdownLinks = document.querySelectorAll('.nav-dropdown-menu li a');
+
+        dropdowns.forEach(dropdown => {
+            const btn = dropdown.querySelector('.dropdown-btn');
+
+            btn.addEventListener('click', function () {
+                dropdowns.forEach(other => {
+                    if (other !== dropdown) {
+                        other.classList.remove('active');
+                    }
+                });
+
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.dropdown')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        navDropdownLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const category = this.getAttribute('data-category');
+                const targetDropdown = document.querySelector('.dropdown[data-category="' + category + '"]');
+
+                if (targetDropdown) {
+                    dropdowns.forEach(d => d.classList.remove('active'));
+
+                    targetDropdown.classList.add('active');
+
+                    targetDropdown.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        });
+
+         const bookingForm = document.getElementById('bookingForm');
+        const bookingSuccess = document.getElementById('bookingSuccess');
+        const phoneInput = document.getElementById('phone');
+        const fullNameInput = document.getElementById('fullName');
+        const dateInput = document.getElementById('date');
+        const timeInput = document.getElementById('time');
+
+        fullNameInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        });
+
+        fullNameInput.addEventListener('keydown', function(e) {
+            if (e.key === ' ') {
+                return;
+            }
+            if (!/^[a-zA-Z]$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
+                e.preventDefault();
+            }
+        });
+
+        phoneInput.addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '');
+            if (this.value.length > 11) {
+                this.value = this.value.slice(0, 11);
+            }
+        });
+
+        phoneInput.addEventListener('keydown', function(e) {
+            if (!/^\d$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
+                e.preventDefault();
+            }
+        });
+
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        timeInput.addEventListener('change', function() {
+            validateDateTime();
+        });
+
+        dateInput.addEventListener('change', function() {
+            validateDateTime();
+        });
+
+        function validateDateTime() {
+            const selectedDate = dateInput.value;
+            const selectedTime = timeInput.value;
+
+            if (selectedDate && selectedTime) {
+                const now = new Date();
+                const selectedDateTime = new Date(selectedDate + 'T' + selectedTime + ':00');
+                
+                if (selectedDateTime <= now) {
+                    timeInput.setCustomValidity('This time has already passed. Please choose a future time.');
+                    timeInput.style.borderColor = '#e74c3c';
+                    timeInput.style.background = '#fff5f5';
+                } else {
+                    timeInput.setCustomValidity('');
+                    timeInput.style.borderColor = '';
+                    timeInput.style.background = '';
+                }
+            }
+        }
+
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const phoneValue = phoneInput.value;
+            const nameValue = fullNameInput.value.trim();
+            const selectedDate = dateInput.value;
+            const selectedTime = timeInput.value;
+            
+            if (nameValue === '') {
+                alert('Please enter your full name.');
+                fullNameInput.focus();
+                return;
+            }
+            
+            if (phoneValue.length < 10 || phoneValue.length > 11) {
+                alert('Please enter a valid phone number (10-11 digits).');
+                phoneInput.focus();
+                return;
+            }
+
+            if (selectedDate && selectedTime) {
+                const now = new Date();
+                const selectedDateTime = new Date(selectedDate + 'T' + selectedTime + ':00');
+                
+                if (selectedDateTime <= now) {
+                    alert('The selected time has already passed. Please choose a future date and time.');
+                    timeInput.focus();
+                    return;
+                }
+            }
+            
+            bookingForm.style.display = 'none';
+            bookingSuccess.style.display = 'block';
+            
+            bookingSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    </script>
+    <footer>
+    <div class="foot-gold">Jun's Cut Salon & Barbershop</div>
+    <p>Unit 110–111, Cartagena Suites, Poblacion, Makati City &nbsp;·&nbsp; +63 927 558 8671</p>
+  </footer>
+    </body>
+    </html>
