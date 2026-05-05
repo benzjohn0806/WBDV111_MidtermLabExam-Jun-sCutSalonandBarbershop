@@ -24,7 +24,7 @@ img {
 }
 
 body {
-    background-color: rgb(229, 224, 218);
+    background-color: #f5f2ef;
 }
 
 header {
@@ -83,63 +83,6 @@ header .navbar {
 .navbar .nav-menu .nav-link:hover {
     color: rgb(54, 53, 54);
     background: rgb(182, 176, 180);
-}
-
-.dropdown-nav {
-    position: relative;
-}
-
-.dropdown-nav .nav-link {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.dropdown-nav .nav-link i {
-    font-size: 10px;
-    transition: transform 0.3s ease;
-}
-
-.dropdown-nav:hover .nav-link i {
-    transform: rotate(180deg);
-}
-
-.nav-dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    min-width: 200px;
-    border-radius: 8px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 1000;
-    list-style: none;
-    padding: 8px 0;
-}
-
-.dropdown-nav:hover .nav-dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.nav-dropdown-menu li a {
-    display: block;
-    padding: 10px 20px;
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-}
-
-.nav-dropdown-menu li a:hover {
-    background: #c89b6d;
-    color: white;
 }
 
 .hero-section {
@@ -288,7 +231,7 @@ header .navbar {
 
 .features {
     padding: 60px 0;
-    background: #ffe5c4;
+    background: #f5f2ef;
 }
 
 .features h1 {
@@ -299,9 +242,9 @@ header .navbar {
     color: rgb(12, 11, 12);
     text-transform: uppercase;
     margin-bottom: 40px;
-    margin-top: 1px;
+    margin-top: 40px;
     padding: 20px;
-    text-align: left;
+    text-align: center;
 }
 
 .left {
@@ -389,7 +332,7 @@ header .navbar {
 }
 
 .services {
-    background: #e6e0d9;
+    background: #f5f2ef;
     padding: 60px 0;
 }
 
@@ -401,8 +344,9 @@ header .navbar {
     color: rgb(12, 11, 12);
     text-transform: uppercase;
     margin-bottom: 40px;
+    margin-top: 40px;
     padding: 20px;
-    text-align: left;
+    text-align: center;
 }
 
 .services-container {
@@ -491,7 +435,7 @@ header .navbar {
 }
 
 .booking-section {
-    background: #ffe5c4;
+    background: #f5f2ef;
     padding: 80px 10%;
 }
 
@@ -505,7 +449,8 @@ header .navbar {
     font-size: 48px;
     color: #0c0b0c;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 .booking-subtitle {
@@ -635,7 +580,7 @@ select:invalid {
 }
 
 .contact-section {
-    background: #e6e0d9;
+    background: #    margin-top: 40px;;
     padding: 80px 10%;
     margin-top: 50px;
 }
@@ -745,7 +690,7 @@ select:invalid {
     margin-top: 30px;
 }
 footer {
-  background: var(--dark);
+  background-color: #e0d5c5;
   border-top: 1px solid rgba(201,168,76,0.2);
   padding: 40px 5%;
   text-align: center;

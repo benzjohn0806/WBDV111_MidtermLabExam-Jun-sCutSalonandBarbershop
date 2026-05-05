@@ -4,22 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jun's Cut Salon and Barbershop</title>
+    <title>Jun's Cut Salon and Barbershop - Services</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="./favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <a href="home.html" class="nav-logo">
+            <a href="index.html" class="nav-logo">
                 <img src="./junscut.jpg" alt="Logo" class="logo">
-                <button class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -31,25 +27,15 @@
                 <li class="nav-item">
                     <a href="features.html" class="nav-link">Features</a>
                 </li>
-                <li class="nav-item dropdown-nav">
-                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
-                    <ul class="nav-dropdown-menu">
-                        <li><a href="services.html" data-category="hair">Hair Services</a></li>
-                        <li><a href="services.html" data-category="color">Color Services</a></li>
-                        <li><a href="services.html" data-category="brazilian">Brazilian & Rebond</a></li>
-                        <li><a href="services.html" data-category="treatment">Treatment</a></li>
-                        <li><a href="services.html" data-category="removal">Removal Services</a></li>
-                        <li><a href="services.html" data-category="nail">Nail Care</a></li>
-                        <li><a href="services.html" data-category="addons">Add-Ons</a></li>
-                        <li><a href="services.html" data-category="waxing">Waxing</a></li>
-                        <li><a href="services.html" data-category="other">Other Services</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link active">Services</a>
+                   
                 </li>
                 <li class="nav-item">
                     <a href="book.html" class="nav-link">Book Now</a>
                 </li>
                 <li class="nav-item">
-                    <a href="contacts.html" class="nav-link">Contact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -62,367 +48,142 @@
 
                 <div class="dropdown-container">
                     <div class="dropdown" data-category="hair">
-                        <button class="dropdown-btn">
-                            Hair Services <i class="fas fa-chevron-down"></i>
-                        </button>
+                        <button class="dropdown-btn">Hair Services <i class="fas fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <table>
-                                <tr>
-                                    <td>Hair Cut Men</td>
-                                    <td>Php 120.00</td>
-                                </tr>
-                                <tr>
-                                    <td>+ Shampoo Conditioner</td>
-                                    <td>Php 30.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair Cut Women</td>
-                                    <td>Php 150.00</td>
-                                </tr>
-                                <tr>
-                                    <td>+ Shampoo Conditioner</td>
-                                    <td>Php 30.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair Iron</td>
-                                    <td>Php 250.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair Iron</td>
-                                    <td>Php 350.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Coldwave Short</td>
-                                    <td>Php 600.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Coldwave Medium</td>
-                                    <td>Php 800.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Coldwave Bra Length</td>
-                                    <td>Php 1,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Coldwave w/ Treatment</td>
-                                    <td>Php 1,500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair & Make up</td>
-                                    <td>Php 800.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Brow Shaving</td>
-                                    <td>Php 50.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Threading</td>
-                                    <td>Php 150.00</td>
-                                </tr>
+                                <tr><td>Hair Cut Men</td><td>Php 120.00</td></tr>
+                                <tr><td>+ Shampoo Conditioner</td><td>Php 30.00</td></tr>
+                                <tr><td>Hair Cut Women</td><td>Php 150.00</td></tr>
+                                <tr><td>+ Shampoo Conditioner</td><td>Php 30.00</td></tr>
+                                <tr><td>Hair Iron</td><td>Php 250.00</td></tr>
+                                <tr><td>Hair Iron</td><td>Php 350.00</td></tr>
+                                <tr><td>Coldwave Short</td><td>Php 600.00</td></tr>
+                                <tr><td>Coldwave Medium</td><td>Php 800.00</td></tr>
+                                <tr><td>Coldwave Bra Length</td><td>Php 1,000.00</td></tr>
+                                <tr><td>Coldwave w/ Treatment</td><td>Php 1,500.00</td></tr>
+                                <tr><td>Hair & Make up</td><td>Php 800.00</td></tr>
+                                <tr><td>Brow Shaving</td><td>Php 50.00</td></tr>
+                                <tr><td>Threading</td><td>Php 150.00</td></tr>
                             </table>
                         </div>
                     </div>
 
                     <div class="dropdown" data-category="color">
-                        <button class="dropdown-btn">
-                            Color Services <i class="fas fa-chevron-down"></i>
-                        </button>
+                        <button class="dropdown-btn">Color Services <i class="fas fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <table>
-                                <tr>
-                                    <td>Roots Color</td>
-                                    <td>Php 500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair Color start at</td>
-                                    <td>Php 1,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair Color w/ Treatment & Cut</td>
-                                    <td>Php 1,500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair Color w/ Botox & Cut</td>
-                                    <td>Php 1,800.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair Color w/ Brazilian Keratin</td>
-                                    <td>Php 2,000.00</td>
-                                </tr>
+                                <tr><td>Roots Color</td><td>Php 500.00</td></tr>
+                                <tr><td>Hair Color start at</td><td>Php 1,000.00</td></tr>
+                                <tr><td>Hair Color w/ Treatment & Cut</td><td>Php 1,500.00</td></tr>
+                                <tr><td>Hair Color w/ Botox & Cut</td><td>Php 1,800.00</td></tr>
+                                <tr><td>Hair Color w/ Brazilian Keratin</td><td>Php 2,000.00</td></tr>
                             </table>
                         </div>
                     </div>
 
                     <div class="dropdown" data-category="brazilian">
-                        <button class="dropdown-btn">
-                            Brazilian & Rebond <i class="fas fa-chevron-down"></i>
-                        </button>
+                        <button class="dropdown-btn">Brazilian & Rebond <i class="fas fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <table>
-                                <tr>
-                                    <td>Brazilian Blowout</td>
-                                    <td>Php 800.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Brazilian Keratin</td>
-                                    <td>Php 1,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Brazilian Prime</td>
-                                    <td>Php 2,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Rebond</td>
-                                    <td>Php 1,200.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Kerabond</td>
-                                    <td>Php 1,500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Organic Rebond</td>
-                                    <td>Php 1,500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Rebond w/ Brazilian Botox</td>
-                                    <td>Php 2,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Rebond w/ Brazilian Keratin</td>
-                                    <td>Php 2,500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Rebond w/ Hair Color & Botox</td>
-                                    <td>Php 3,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Japanese Rebond w/ Treatment</td>
-                                    <td>Php 2,500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Japanese Rebond w/ Hair Color</td>
-                                    <td>Php 2,800.00</td>
-                                </tr>
+                                <tr><td>Brazilian Blowout</td><td>Php 800.00</td></tr>
+                                <tr><td>Brazilian Keratin</td><td>Php 1,000.00</td></tr>
+                                <tr><td>Brazilian Prime</td><td>Php 2,000.00</td></tr>
+                                <tr><td>Rebond</td><td>Php 1,200.00</td></tr>
+                                <tr><td>Kerabond</td><td>Php 1,500.00</td></tr>
+                                <tr><td>Organic Rebond</td><td>Php 1,500.00</td></tr>
+                                <tr><td>Rebond w/ Brazilian Botox</td><td>Php 2,000.00</td></tr>
+                                <tr><td>Rebond w/ Brazilian Keratin</td><td>Php 2,500.00</td></tr>
+                                <tr><td>Rebond w/ Hair Color & Botox</td><td>Php 3,000.00</td></tr>
+                                <tr><td>Japanese Rebond w/ Treatment</td><td>Php 2,500.00</td></tr>
+                                <tr><td>Japanese Rebond w/ Hair Color</td><td>Php 2,800.00</td></tr>
                             </table>
                         </div>
                     </div>
 
                     <div class="dropdown" data-category="treatment">
-                        <button class="dropdown-btn">
-                            Treatment <i class="fas fa-chevron-down"></i>
-                        </button>
+                        <button class="dropdown-btn">Treatment <i class="fas fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <table>
-                                <tr>
-                                    <td>Cellophane Clear</td>
-                                    <td>Php 500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair Spa</td>
-                                    <td>Php 300.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hot Oil</td>
-                                    <td>Php 250.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair Spa Loreal</td>
-                                    <td>Php 800.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hair Mask</td>
-                                    <td>Php 400.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Keratin Mask</td>
-                                    <td>Php 300.00</td>
-                                </tr>
+                                <tr><td>Cellophane Clear</td><td>Php 500.00</td></tr>
+                                <tr><td>Hair Spa</td><td>Php 300.00</td></tr>
+                                <tr><td>Hot Oil</td><td>Php 250.00</td></tr>
+                                <tr><td>Hair Spa Loreal</td><td>Php 800.00</td></tr>
+                                <tr><td>Hair Mask</td><td>Php 400.00</td></tr>
+                                <tr><td>Keratin Mask</td><td>Php 300.00</td></tr>
                             </table>
                         </div>
                     </div>
 
                     <div class="dropdown" data-category="removal">
-                        <button class="dropdown-btn">
-                            Removal Services <i class="fas fa-chevron-down"></i>
-                        </button>
+                        <button class="dropdown-btn">Removal Services <i class="fas fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <table>
-                                <tr>
-                                    <td>Gel Polish (My work)</td>
-                                    <td>Php 150.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Gel Polish (Not my work)</td>
-                                    <td>Php 200.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Soft Gel (My work)</td>
-                                    <td>Php 150.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Soft Gel (Not my work)</td>
-                                    <td>Php 200.00</td>
-                                </tr>
+                                <tr><td>Gel Polish (My work)</td><td>Php 150.00</td></tr>
+                                <tr><td>Gel Polish (Not my work)</td><td>Php 200.00</td></tr>
+                                <tr><td>Soft Gel (My work)</td><td>Php 150.00</td></tr>
+                                <tr><td>Soft Gel (Not my work)</td><td>Php 200.00</td></tr>
                             </table>
                         </div>
                     </div>
 
                     <div class="dropdown" data-category="nail">
-                        <button class="dropdown-btn">
-                            Nail Care <i class="fas fa-chevron-down"></i>
-                        </button>
+                        <button class="dropdown-btn">Nail Care <i class="fas fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <table>
-                                <tr>
-                                    <td>Classic Manicure</td>
-                                    <td>Php 120.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Classic Pedicure</td>
-                                    <td>Php 130.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Mani Gel</td>
-                                    <td>Php 350.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Pedi Gel</td>
-                                    <td>Php 450.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Soft Gel Plain</td>
-                                    <td>Php 899.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Soft Gel Full Design</td>
-                                    <td>Php 1,800.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Foot Spa</td>
-                                    <td>Php 250.00</td>
-                                </tr>
+                                <tr><td>Classic Manicure</td><td>Php 120.00</td></tr>
+                                <tr><td>Classic Pedicure</td><td>Php 130.00</td></tr>
+                                <tr><td>Mani Gel</td><td>Php 350.00</td></tr>
+                                <tr><td>Pedi Gel</td><td>Php 450.00</td></tr>
+                                <tr><td>Soft Gel Plain</td><td>Php 899.00</td></tr>
+                                <tr><td>Soft Gel Full Design</td><td>Php 1,800.00</td></tr>
+                                <tr><td>Foot Spa</td><td>Php 250.00</td></tr>
                             </table>
                         </div>
                     </div>
 
                     <div class="dropdown" data-category="addons">
-                        <button class="dropdown-btn">
-                            Add-Ons <i class="fas fa-chevron-down"></i>
-                        </button>
+                        <button class="dropdown-btn">Add-Ons <i class="fas fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <table>
-                                <tr>
-                                    <td>Rhine Stone</td>
-                                    <td>Php 20.00+</td>
-                                </tr>
-                                <tr>
-                                    <td>French Tip</td>
-                                    <td>Php 30.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Nail Art</td>
-                                    <td>Php 20.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Ombre</td>
-                                    <td>Php 25.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Chrome</td>
-                                    <td>Php 40.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Stickers</td>
-                                    <td>Php 10.00</td>
-                                </tr>
+                                <tr><td>Rhine Stone</td><td>Php 20.00+</td></tr>
+                                <tr><td>French Tip</td><td>Php 30.00</td></tr>
+                                <tr><td>Nail Art</td><td>Php 20.00</td></tr>
+                                <tr><td>Ombre</td><td>Php 25.00</td></tr>
+                                <tr><td>Chrome</td><td>Php 40.00</td></tr>
+                                <tr><td>Stickers</td><td>Php 10.00</td></tr>
                             </table>
                         </div>
                     </div>
 
                     <div class="dropdown" data-category="waxing">
-                        <button class="dropdown-btn">
-                            Waxing <i class="fas fa-chevron-down"></i>
-                        </button>
+                        <button class="dropdown-btn">Waxing <i class="fas fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <table>
-                                <tr>
-                                    <td>Underarm Wax</td>
-                                    <td>Php 250.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Half Leg Wax</td>
-                                    <td>Php 500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Full Leg Wax</td>
-                                    <td>Php 600.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Half Arms Wax</td>
-                                    <td>Php 350.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Full Arms Wax</td>
-                                    <td>Php 450.00</td>
-                                </tr>
+                                <tr><td>Underarm Wax</td><td>Php 250.00</td></tr>
+                                <tr><td>Half Leg Wax</td><td>Php 500.00</td></tr>
+                                <tr><td>Full Leg Wax</td><td>Php 600.00</td></tr>
+                                <tr><td>Half Arms Wax</td><td>Php 350.00</td></tr>
+                                <tr><td>Full Arms Wax</td><td>Php 450.00</td></tr>
                             </table>
                         </div>
                     </div>
 
                     <div class="dropdown" data-category="other">
-                        <button class="dropdown-btn">
-                            Other Services <i class="fas fa-chevron-down"></i>
-                        </button>
+                        <button class="dropdown-btn">Other Services <i class="fas fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <table>
-                                <tr>
-                                    <td>Foot Spa w/ Mani & Pedi</td>
-                                    <td>Php 500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Foot Spa w/ Gel & Pedi</td>
-                                    <td>Php 1,200.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Eyelash Lift</td>
-                                    <td>Php 500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Eyelash Lift (NATURAL LOOK)</td>
-                                    <td>Php 500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Eyelash Extension (CAT EYE)</td>
-                                    <td>Php 800.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Eyelash Extension (MASCARA EFFECT)</td>
-                                    <td>Php 1,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Eyebrow Tint</td>
-                                    <td>Php 300.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Eyebrow (Lamination w/tint)</td>
-                                    <td>Php 500.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Ear Candling</td>
-                                    <td>Php 150.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Hand Paraffin Wax</td>
-                                    <td>Php 300.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Foot Paraffin Wax</td>
-                                    <td>Php 400.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Foot Reflex</td>
-                                    <td>Php 400.00</td>
-                                </tr>
+                                <tr><td>Foot Spa w/ Mani & Pedi</td><td>Php 500.00</td></tr>
+                                <tr><td>Foot Spa w/ Gel & Pedi</td><td>Php 1,200.00</td></tr>
+                                <tr><td>Eyelash Lift</td><td>Php 500.00</td></tr>
+                                <tr><td>Eyelash Lift (NATURAL LOOK)</td><td>Php 500.00</td></tr>
+                                <tr><td>Eyelash Extension (CAT EYE)</td><td>Php 800.00</td></tr>
+                                <tr><td>Eyelash Extension (MASCARA EFFECT)</td><td>Php 1,000.00</td></tr>
+                                <tr><td>Eyebrow Tint</td><td>Php 300.00</td></tr>
+                                <tr><td>Eyebrow (Lamination w/tint)</td><td>Php 500.00</td></tr>
+                                <tr><td>Ear Candling</td><td>Php 150.00</td></tr>
+                                <tr><td>Hand Paraffin Wax</td><td>Php 300.00</td></tr>
+                                <tr><td>Foot Paraffin Wax</td><td>Php 400.00</td></tr>
+                                <tr><td>Foot Reflex</td><td>Php 400.00</td></tr>
                             </table>
                         </div>
                     </div>
@@ -430,9 +191,10 @@
             </div>
         </section>
     </main>
-          <footer>
-    <div class="foot-gold">Jun's Cut Salon & Barbershop</div>
-    <p>Unit 110–111, Cartagena Suites, Poblacion, Makati City &nbsp;·&nbsp; +63 927 558 8671</p>
-  </footer>
-        </body>
-        </html>
+    <footer>
+        <div class="foot-gold">Jun's Cut Salon & Barbershop</div>
+        <p>Unit 110–111, Cartagena Suites, Poblacion, Makati City &nbsp;·&nbsp; +63 927 558 8671</p>
+      </footer>
+</body>
+
+</html>
