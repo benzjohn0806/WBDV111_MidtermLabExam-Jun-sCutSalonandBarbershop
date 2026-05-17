@@ -3,23 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jun's Cut Salon and Barbershop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Book Appointment | Jun's Cut Salon and Barbershop</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="./favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <a href="index.html" class="nav-logo">
-                <img src="./junscut.jpg" alt="Logo" class="logo">
+                <img src="./junscut.jpg" alt="Jun's Cut Salon Logo" class="logo">
             </a>
-            <ul class="nav-menu">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a> 
+                    <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link">About</a>
@@ -31,7 +34,7 @@
                     <a href="services.html" class="nav-link">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="book.html" class="nav-link">Book Now</a>
+                    <a href="book.html" class="nav-link active">Book Now</a>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
@@ -39,100 +42,247 @@
             </ul>
         </nav>
     </header>
-            <main>
-            <section id="book" class="booking-section">
-            <div class="booking-container">
-                <h2>Book a Reservation</h2>
-                <p class="booking-subtitle">Schedule your appointment with us today!</p>
 
-                <form class="booking-form" id="bookingForm">
-                    <div class="form-group">
-                        <label for="fullName">Full Name *</label>
-                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+    <main>
+        <!-- Page Hero Banner -->
+        <section class="page-hero booking-hero">
+            <div class="page-hero-overlay"></div>
+            <div class="page-hero-content">
+                <h1>Book Your Appointment</h1>
+                <p>Secure your slot and skip the wait</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> <span>/</span> <span class="current">Book Now</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section Enhanced -->
+        <section id="book" class="booking-page-section">
+            <div class="container">
+                <div class="booking-page-wrapper">
+                    <!-- Left Info Panel -->
+                    <div class="booking-info-panel">
+                        <div class="info-card">
+                            <h3><i class="fas fa-clock"></i> Opening Hours</h3>
+                            <ul class="info-hours">
+                                <li><span>Monday - Friday:</span> <strong>9:00 AM - 8:00 PM</strong></li>
+                                <li><span>Saturday:</span> <strong>9:00 AM - 8:00 PM</strong></li>
+                                <li><span>Sunday:</span> <strong>10:00 AM - 6:00 PM</strong></li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-phone-alt"></i> Contact Us</h3>
+                            <p><strong>Phone:</strong> +63 927 558 8671</p>
+                            <p><strong>Email:</strong> junluter1016@gmail.com</p>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                            <p>Unit 110–111, Cartagena Suites<br>Poblacion, Makati City, Philippines</p>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-info-circle"></i> Booking Tips</h3>
+                            <ul class="tips-list">
+                                <li><i class="fas fa-check-circle"></i> Please arrive 5-10 minutes early</li>
+                                <li><i class="fas fa-check-circle"></i> For cancellations, notify us 2 hours before</li>
+                                <li><i class="fas fa-check-circle"></i> Walk-ins are welcome but priority goes to bookings</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    <!-- Booking Form Panel -->
+                    <div class="booking-form-panel">
+                        <div class="form-header">
+                            <h2>Schedule Your Appointment</h2>
+                            <p>Fill out the form below and we'll confirm your booking shortly</p>
+                        </div>
+
+                        <form class="booking-form-enhanced" id="bookingForm">
+                            <div class="form-row-2col">
+                                <div class="form-group">
+                                    <label for="fullName"><i class="fas fa-user"></i> Full Name *</label>
+                                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone"><i class="fas fa-phone"></i> Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row-2col">
+                                <div class="form-group">
+                                    <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="service"><i class="fas fa-cut"></i> Service Type *</label>
+                                    <select id="service" name="service" required>
+                                        <option value="">Select a service</option>
+                                        <option value="haircut-men">Hair Cut Men - ₱350</option>
+                                        <option value="haircut-women">Hair Cut Women - ₱400</option>
+                                        <option value="hair-iron">Hair Iron - ₱250</option>
+                                        <option value="coldwave">Coldwave - ₱600+</option>
+                                        <option value="hair-color">Hair Color - ₱1,200+</option>
+                                        <option value="brazilian">Brazilian Blowout - ₱800+</option>
+                                        <option value="rebond">Rebond - ₱2,500+</option>
+                                        <option value="treatment">Hair Treatment - ₱550</option>
+                                        <option value="manicure">Manicure - ₱150</option>
+                                        <option value="pedicure">Pedicure - ₱180</option>
+                                        <option value="soft-gel">Soft Gel Nails - ₱899+</option>
+                                        <option value="waxing">Waxing - ₱250+</option>
+                                        <option value="eyelash">Eyelash Services - ₱500+</option>
+                                        <option value="foot-spa">Foot Spa - ₱350</option>
+                                        <option value="makeup">Hair & Makeup - ₱1,200</option>
+                                        <option value="beard-trim">Beard Grooming - ₱220</option>
+                                        <option value="hot-shave">Hot Towel Shave - ₱280</option>
+                                        <option value="other">Other Service</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row-2col">
+                                <div class="form-group">
+                                    <label for="date"><i class="fas fa-calendar"></i> Preferred Date *</label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time"><i class="fas fa-clock"></i> Preferred Time *</label>
+                                    <select id="time" name="time" required>
+                                        <option value="">Select a time</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="09:30">9:30 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="10:30">10:30 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="11:30">11:30 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="13:30">1:30 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="14:30">2:30 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="15:30">3:30 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="16:30">4:30 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                        <option value="17:30">5:30 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                        <option value="18:30">6:30 PM</option>
+                                        <option value="19:00">7:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- REMOVED: Preferred Barber/Stylist field -->
+
+                            <div class="form-group">
+                                <label for="message"><i class="fas fa-comment"></i> Special Requests or Notes</label>
+                                <textarea id="message" name="message" rows="4"
+                                    placeholder="Any special requests, allergies, or additional information..."></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn-enhanced">
+                                <i class="fas fa-calendar-check"></i> Confirm Appointment
+                            </button>
+
+                            <p class="form-disclaimer">
+                                <i class="fas fa-shield-alt"></i> We respect your privacy. Your information is secure with us.
+                            </p>
+                        </form>
+
+                        <div class="booking-success" id="bookingSuccess" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Booking Submitted!</h3>
+                            <p>Thank you for your reservation. We will confirm your appointment shortly via SMS or email.</p>
+                            <button class="btn-outline-small" onclick="resetForm()">Book Another</button>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email address">
+        <!-- Popular Services Section -->
+        <section class="popular-services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Most Requested</span>
+                    <h2>Popular Services</h2>
+                    <p>See what our clients love the most</p>
+                </div>
+                <div class="popular-grid">
+                    <div class="popular-card">
+                        <i class="fas fa-cut"></i>
+                        <h3>Classic Haircut</h3>
+                        <p>Precision cut + hot towel finish</p>
+                        <div class="price">₱350</div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="service">Service Type *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a service</option>
-                            <option value="haircut-men">Hair Cut Men - Php 120</option>
-                            <option value="haircut-women">Hair Cut Women - Php 150</option>
-                            <option value="hair-iron">Hair Iron - Php 250</option>
-                            <option value="coldwave">Coldwave - Php 600+</option>
-                            <option value="hair-color">Hair Color - Php 1,000+</option>
-                            <option value="brazilian">Brazilian - Php 800+</option>
-                            <option value="rebond">Rebond - Php 1,200+</option>
-                            <option value="treatment">Treatment - Php 250+</option>
-                            <option value="manicure">Manicure - Php 120+</option>
-                            <option value="pedicure">Pedicure - Php 130+</option>
-                            <option value="soft-gel">Soft Gel - Php 899+</option>
-                            <option value="waxing">Waxing - Php 250+</option>
-                            <option value="eyelash">Eyelash Services - Php 500+</option>
-                            <option value="foot-spa">Foot Spa - Php 250+</option>
-                            <option value="makeup">Hair & Makeup - Php 800</option>
-                            <option value="other">Other Service</option>
-                        </select>
+                    <div class="popular-card">
+                        <i class="fas fa-palette"></i>
+                        <h3>Hair Color</h3>
+                        <p>Full color or highlights</p>
+                        <div class="price">₱1,200+</div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="date">Preferred Date *</label>
-                        <input type="date" id="date" name="date" required>
+                    <div class="popular-card">
+                        <i class="fas fa-blade"></i>
+                        <h3>Hot Towel Shave</h3>
+                        <p>Classic straight razor shave</p>
+                        <div class="price">₱280</div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="time">Preferred Time *</label>
-                        <select id="time" name="time" required>
-                            <option value="">Select a time</option>
-                            <option value="10:00">10:00 AM</option>
-                            <option value="10:30">10:30 AM</option>
-                            <option value="11:00">11:00 AM</option>
-                            <option value="11:30">11:30 AM</option>
-                            <option value="12:00">12:00 PM</option>
-                            <option value="12:30">12:30 PM</option>
-                            <option value="13:00">1:00 PM</option>
-                            <option value="13:30">1:30 PM</option>
-                            <option value="14:00">2:00 PM</option>
-                            <option value="14:30">2:30 PM</option>
-                            <option value="15:00">3:00 PM</option>
-                            <option value="15:30">3:30 PM</option>
-                            <option value="16:00">4:00 PM</option>
-                            <option value="16:30">4:30 PM</option>
-                            <option value="17:00">5:00 PM</option>
-                            <option value="17:30">5:30 PM</option>
-                            <option value="18:00">6:00 PM</option>
-                        </select>
+                    <div class="popular-card">
+                        <i class="fas fa-hand-peace"></i>
+                        <h3>Manicure & Pedicure</h3>
+                        <p>Complete hand & foot care</p>
+                        <div class="price">₱330</div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="message">Special Requests or Notes</label>
-                        <textarea id="message" name="message" rows="4"
-                            placeholder="Any special requests or additional information..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Book Appointment</button>
-                </form>
-
-                <div class="booking-success" id="bookingSuccess" style="display: none;">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Booking Submitted!</h3>
-                    <p>Thank you for your reservation. We will confirm your appointment shortly.</p>
                 </div>
             </div>
         </section>
     </main>
-    <footer>
-    <div class="foot-gold">Jun's Cut Salon & Barbershop</div>
-    <p>Unit 110–111, Cartagena Suites, Poblacion, Makati City &nbsp;·&nbsp; +63 927 558 8671</p>
-  </footer>
-    </body>
-    </html>
+
+    <!-- Enhanced Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="./junscut.jpg" alt="Jun's Cut Logo">
+            </div>
+            <p>Premium haircuts and grooming services in the heart of Makati. Your style, our passion.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61584180612265" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html">Book Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Visit Us</h4>
+            <p><i class="fas fa-location-dot"></i> Unit 110–111, Cartagena Suites,<br> Poblacion, Makati City, Philippines</p>
+            <p><i class="fas fa-phone"></i> +63 927 558 8671</p>
+            <p><i class="fas fa-envelope"></i> junluter1016@gmail.com</p>
+        </div>
+        <div class="footer-col">
+            <h4>Opening Hours</h4>
+            <ul class="hours">
+                <li>Mon - Fri: <span>9:00 AM - 8:00 PM</span></li>
+                <li>Saturday: <span>9:00 AM - 8:00 PM</span></li>
+                <li>Sunday: <span>10:00 AM - 7:00 PM</span></li>
+                <li class="holiday">Closed: Public Holidays</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Jun's Cut Salon and Barbershop. All rights reserved. | Crafted with <i class="fas fa-scissors"></i> in Makati</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+
+</html>

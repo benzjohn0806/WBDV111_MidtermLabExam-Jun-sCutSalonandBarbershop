@@ -3,22 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jun's Cut Salon and Barbershop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Jun's Cut Salon and Barbershop | Premium Grooming in Makati</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="./favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <a href="index.html" class="nav-logo">
-                <img src="./junscut.jpg" alt="Logo" class="logo">
+                <img src="./junscut.jpg" alt="Jun's Cut Salon Logo" class="logo">
             </a>
-            <ul class="nav-menu">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link active">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link">About</a>
@@ -28,7 +32,6 @@
                 </li>
                 <li class="nav-item">
                     <a href="services.html" class="nav-link">Services</a>
-                    
                 </li>
                 <li class="nav-item">
                     <a href="book.html" class="nav-link">Book Now</a>
@@ -41,20 +44,201 @@
     </header>
 
     <main>
+        <!-- Hero Banner Section -->
         <section id="home" class="hero-section">
-            <div class="centered-content">
-                <h1>Welcome to Jun's Cut Salon and Barbershop!</h1>
-                <p>From classic cuts to modern styles, we're here to make sure you leave the chair looking and
-                    feeling your absolute best.</p>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge">Est. 2015 • Makati's Premier Grooming Lounge</span>
+                <h1>Where Style Meets <span class="gold-text">Tradition</span></h1>
+                <p>From classic cuts to modern styles, we're here to make sure you leave the chair looking and feeling your absolute best.</p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn-primary">Contact Us</a>
+                    <a href="#booking" class="btn-primary">Book Appointment <i class="fas fa-arrow-right"></i></a>
+                    <a href="#services" class="btn-outline">Explore Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><span>5000+</span> Happy Clients</div>
+                    <div class="stat"><span>15+</span> Expert Stylists</div>
+                    <div class="stat"><span>4.9⭐</span> Google Rating</div>
                 </div>
             </div>
         </section>
-  <footer>
-    <div class="foot-gold">Jun's Cut Salon & Barbershop</div>
-    <p>Unit 110–111, Cartagena Suites, Poblacion, Makati City &nbsp;·&nbsp; +63 927 558 8671</p>
-  </footer>
+
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Premium Services</span>
+                    <h2>Modern & Classic Grooming</h2>
+                    <p>Experience top-tier haircare and barbering services tailored just for you</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-cut"></i></div>
+                        <h3>Classic Haircut</h3>
+                        <p>Precision scissor & clipper cut, hot towel finish</p>
+                        <div class="price">₱350</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-palette"></i></div>
+                        <h3>Hair Color</h3>
+                        <p>Professional color, highlights or full coverage</p>
+                        <div class="price">₱1,200+</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-magic"></i></div>
+                        <h3>Rebonding</h3>
+                        <p>Sleek, straight & healthy hair transformation</p>
+                        <div class="price">₱2,500+</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-spa"></i></div>
+                        <h3>Hair Treatment</h3>
+                        <p>Deep conditioning & keratin repair</p>
+                        <div class="price">₱550</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-child"></i></div>
+                        <h3>Kids Cut (12 & under)</h3>
+                        <p>Fun & fast haircut for young gentlemen/ladies</p>
+                        <div class="price">₱250</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-database"></i></div>
+                        <h3>Scalp Treatment</h3>
+                        <p>Anti-dandruff & soothing therapy</p>
+                        <div class="price">₱450</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Work</span>
+                    <h2>Style Gallery</h2>
+                    <p>See the transformations and latest trends from our chair</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./hair.jpg" alt="Protein straightening bond Treatment with haircolor">
+                        <div class="gallery-overlay"><span>Protein Straightening Bond Treatment with Hair Color</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./manicure.jpg" alt="Manicure">
+                        <div class="gallery-overlay"><span>Manicure</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./pedicure.jpg" alt="Pedicure">
+                        <div class="gallery-overlay"><span>Pedicure</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Online Booking Form (No Barber/Stylist Field) -->
+        <section id="booking" class="booking-section">
+            <div class="container">
+                <div class="booking-wrapper">
+                    <div class="booking-info">
+                        <span class="section-tag">Secure your slot</span>
+                        <h2>Book Your <span class="gold-text">Appointment</span></h2>
+                        <p>Walk-ins welcome, but we recommend booking ahead to avoid waiting. Your style journey starts here.</p>
+                        <div class="info-row"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 8:00 PM</div>
+                        <div class="info-row"><i class="fas fa-clock"></i> Sunday: 10:00 AM - 6:00 PM</div>
+                        <div class="info-row"><i class="fas fa-phone-alt"></i> +63 927 558 8671</div>
+                        <div class="info-row"><i class="fas fa-map-marker-alt"></i> Unit 110–111, Cartagena Suites, Poblacion, Makati</div>
+                    </div>
+                    <form class="booking-form" id="appointmentForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" required id="name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required id="email">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required id="phone">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <select required id="service">
+                                    <option value="" disabled selected>Select Service</option>
+                                    <option>Classic Haircut (₱350)</option>
+                                    <option>Hair Color (₱1,200+)</option>
+                                    <option>Rebonding (₱2,500+)</option>
+                                    <option>Hair Treatment (₱550)</option>
+                                    <option>Hot Towel Shave (₱280)</option>
+                                    <option>Beard Grooming (₱220)</option>
+                                    <option>Kids Cut (₱250)</option>
+                                    <option>Scalp Treatment (₱450)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" required id="date">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="time" required id="time">
+                            </div>
+                            <div class="form-group">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="2" placeholder="Special requests / notes"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">Confirm Booking <i class="fas fa-calendar-check"></i></button>
+                        <p class="form-note">We'll send a confirmation SMS/Email within 15 minutes.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="./junscut.jpg" alt="Jun's Cut Logo">
+            </div>
+            <p>Premium haircuts and grooming services in the heart of Makati. Your style, our passion.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61584180612265" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html">Book Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Visit Us</h4>
+            <p><i class="fas fa-location-dot"></i> Unit 110–111, Cartagena Suites,<br> Poblacion, Makati City, Philippines</p>
+            <p><i class="fas fa-phone"></i> +63 927 558 8671</p>
+            <p><i class="fas fa-envelope"></i> junluter1016@gmail.com</p>
+        </div>
+        <div class="footer-col">
+            <h4>Opening Hours</h4>
+            <ul class="hours">
+                <li>Mon - Fri: <span>9:00 AM - 8:00 PM</span></li>
+                <li>Saturday: <span>9:00 AM - 8:00 PM</span></li>
+                <li>Sunday: <span>10:00 AM - 7:00 PM</span></li>
+                <li class="holiday">Closed: Public Holidays</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Jun's Cut Salon and Barbershop. All rights reserved. | Crafted with <i class="fas fa-scissors"></i> in Makati</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 
 </html>

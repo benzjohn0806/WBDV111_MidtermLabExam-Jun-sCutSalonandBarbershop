@@ -3,26 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jun's Cut Salon and Barbershop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About Us | Jun's Cut Salon and Barbershop</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="./favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <a href="index.html" class="nav-logo">
-                <img src="./junscut.jpg" alt="Logo" class="logo">
-                
+                <img src="./junscut.jpg" alt="Jun's Cut Salon Logo" class="logo">
             </a>
-            <ul class="nav-menu">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a> 
+                    <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
+                    <a href="about.html" class="nav-link active">About</a>
                 </li>
                 <li class="nav-item">
                     <a href="features.html" class="nav-link">Features</a>
@@ -40,35 +43,212 @@
         </nav>
     </header>
 
-            <section id="about" class="about">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="./entrance.png" alt="Salon Image">
-                </div>
-                <div class="about-text">
-                    <span class="tag">ABOUT OUR SALON</span>
-                    <h2>Beauty, Confidence & Care</h2>
-                    <p>
-                        Jun's Cut Salon & Barbershop was established in 2025, we believe self-care is more than
-                        a luxury, it's a lifestyle. Our studio offers professional hair,
-                        nails, eyelash, waxing, facial, and gluta services designed to help
-                        you look and feel your best.
-                    </p>
-                    <p>
-                        Our skilled beauty professionals combine modern techniques,
-                        quality products, and personalized care to give every client
-                        the confidence they deserve. We take pride in providing a clean, relaxing, and welcoming
-                        environment where you can unwind and enjoy personalized care. From everyday maintenance to
-                        special-occasion glam, our goal is to enhance your natural beauty while boosting your
-                        confidence.
-                    </p>
+    <main>
+        <section class="page-hero about-hero">
+            <div class="page-hero-overlay"></div>
+            <div class="page-hero-content">
+                <h1>Our Story</h1>
+                <p>Where passion for style meets dedication to service</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> <span>/</span> <span class="current">About Us</span>
                 </div>
             </div>
         </section>
 
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrapper">
+                        <div class="about-image">
+                            <img src="./entrance.png" alt="Jun's Cut Salon Entrance and Interior">
+                        </div>
+                        <div class="image-badge">
+                            <i class="fas fa-scissors"></i> Est. 2025
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <span class="section-tag">ABOUT OUR SALON</span>
+                        <h2>Beauty, <span class="gold-text">Confidence</span> & Care</h2>
+                        <p class="lead-text">
+                            Jun's Cut Salon & Barbershop was established in 2025. We believe self-care is more than
+                            a luxury — it's a lifestyle.
+                        </p>
+                        <p>
+                            Our studio offers professional hair, nails, eyelash, waxing, facial, and gluta services designed to help
+                            you look and feel your best. Our skilled beauty professionals combine modern techniques,
+                            quality products, and personalized care to give every client the confidence they deserve.
+                        </p>
+                        <p>
+                            We take pride in providing a clean, relaxing, and welcoming environment where you can unwind and enjoy personalized care. 
+                            From everyday maintenance to special-occasion glam, our goal is to enhance your natural beauty while boosting your confidence.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Happy Clients</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Expert Stylists</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">4.9⭐</span>
+                                <span class="stat-label">Client Rating</span>
+                            </div>
+                        </div>
+                        <a href="book.html" class="btn-primary">Book an Appointment <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="values-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What Drives Us</span>
+                    <h2>Our Core Values</h2>
+                    <p>The principles that guide everything we do at Jun's Cut</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-heart"></i></div>
+                        <h3>Passion for Style</h3>
+                        <p>We live and breathe hair artistry, constantly learning new techniques to bring you the latest trends.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-hand-sparkles"></i></div>
+                        <h3>Quality Products</h3>
+                        <p>We use only premium, salon-grade products that protect and nourish your hair.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-clock"></i></div>
+                        <h3>Respect for Time</h3>
+                        <p>Your time matters. We value punctuality and efficient, thorough service.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-smile"></i></div>
+                        <h3>Warm Hospitality</h3>
+                        <p>Every client is family. Enjoy a relaxing, welcoming atmosphere from arrival to departure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+<section class="team-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Meet The Artist</span>
+            <h2>Behind The Chair</h2>
+            <p>Talented professional dedicated to your best look</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <!-- REPLACE THIS PLACEHOLDER WITH ACTUAL IMAGE -->
+                <div class="team-image">
+                    <img src="./juniter.jpg" alt="Juniter Teriote - Master Barber">
+                </div>
+                <h3>Juniter Teriote</h3>
+                <span class="team-role">Master Barber & Founder</span>
+                <p>15+ years of experience. Specializes in classic cuts and modern fades.</p>
+                <div class="team-social">
+                    <a href="https://www.facebook.com/jun.lter" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Client Love</span>
+                    <h2>What Our Clients Say</h2>
+                    <p>Real experiences from happy customers</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>"Best barber in Makati! Jun gave me the perfect fade and the hot towel shave was incredibly relaxing. Will definitely come back."</p>
+                        <div class="client-info">
+                            <strong>Mark Dela Cruz</strong>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>"I had my hair colored and rebonded here — amazing results! The staff is super friendly and the salon is very clean. 10/10."</p>
+                        <div class="client-info">
+                            <strong>Isabella Reyes</strong>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>"The ambiance is so relaxing, and they really listen to what you want. My go-to salon in Poblacion!"</p>
+                        <div class="client-info">
+                            <strong>James Lim</strong>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready for a Fresh New Look?</h2>
+                    <p>Experience the Jun's Cut difference — where style meets tradition.</p>
+                    <a href="book.html" class="btn-primary btn-large">Book Your Appointment <i class="fas fa-calendar-check"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
 <footer>
-    <div class="foot-gold">Jun's Cut Salon & Barbershop</div>
-    <p>Unit 110–111, Cartagena Suites, Poblacion, Makati City &nbsp;·&nbsp; +63 927 558 8671</p>
-  </footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="./junscut.jpg" alt="Jun's Cut Logo">
+            </div>
+            <p>Premium haircuts and grooming services in the heart of Makati. Your style, our passion.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61584180612265" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html">Book Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Visit Us</h4>
+            <p><i class="fas fa-location-dot"></i> Unit 110–111, Cartagena Suites,<br> Poblacion, Makati City, Philippines</p>
+            <p><i class="fas fa-phone"></i> +63 927 558 8671</p>
+            <p><i class="fas fa-envelope"></i> junluter1016@gmail.com</p>
+        </div>
+        <div class="footer-col">
+            <h4>Opening Hours</h4>
+            <ul class="hours">
+                <li>Mon - Fri: <span>9:00 AM - 8:00 PM</span></li>
+                <li>Saturday: <span>9:00 AM - 8:00 PM</span></li>
+                <li>Sunday: <span>10:00 AM - 7:00 PM</span></li>
+                <li class="holiday">Closed: Public Holidays</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Jun's Cut Salon and Barbershop. All rights reserved. | Crafted with <i class="fas fa-scissors"></i> in Makati</p>
+    </div>
+</footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

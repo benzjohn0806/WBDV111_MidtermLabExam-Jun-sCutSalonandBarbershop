@@ -3,28 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jun's Cut Salon and Barbershop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Our Features | Jun's Cut Salon and Barbershop</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="./favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-        <header>
+    <header>
         <nav class="navbar">
             <a href="index.html" class="nav-logo">
-                <img src="./junscut.jpg" alt="Logo" class="logo">
+                <img src="./junscut.jpg" alt="Jun's Cut Salon Logo" class="logo">
             </a>
-            <ul class="nav-menu">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a> 
+                    <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="features.html" class="nav-link active">Features</a>
                 </li>
                 <li class="nav-item">
                     <a href="services.html" class="nav-link">Services</a>
@@ -39,69 +43,212 @@
         </nav>
     </header>
 
-        <section id="features" class="features">
-            <h1>Our Features</h1>
-
-            <div class="left">
-                <div class="row">
-                    <div class="image-box">
-                        <img src="./Business permit.jpg" alt="Business Permit">
-                    </div>
-                    <div class="text-content">
-                        <h2>Business Permit</h2>
-                        <p>Our Salon and Barbershop is Business registered under DTI.</p>
-                    </div>
-                </div>
-
-                <div class="row reverse">
-                    <div class="image-box">
-                        <img src="./barbershopp.jpg" alt="Barbershop Interior">
-                    </div>
-                    <div class="text-content">
-                        <h2>Barbershop</h2>
-                        <p>We offer excellent haircut and other barber services.</p>
-                    </div>
+    <main>
+        <!-- Page Hero Banner -->
+        <section class="page-hero features-hero">
+            <div class="page-hero-overlay"></div>
+            <div class="page-hero-content">
+                <h1>Our Features</h1>
+                <p>Discover what makes Jun's Cut the premier choice for grooming</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> <span>/</span> <span class="current">Features</span>
                 </div>
             </div>
+        </section>
 
-            <div class="left">
-                <div class="row">
-                    <div class="image-box">
-                        <img src="./reception.jpg" alt="Reception">
-                    </div>
-                    <div class="text-content">
-                        <h2>Reception</h2>
-                        <p>You can pay your cash through the reception Cash or Cashless (Online).</p>
-                    </div>
+        <!-- Features Section Enhanced -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Why Choose Us</span>
+                    <h2>Excellence in Every <span class="gold-text">Detail</span></h2>
+                    <p>We take pride in providing a clean, relaxing, and professional environment</p>
                 </div>
 
-                <div class="row reverse">
-                    <div class="image-box">
-                        <img src="./Salon.jpg" alt="Salon Interior">
+                <div class="features-grid">
+                    <!-- Feature 1 - Business Permit -->
+                    <div class="feature-card">
+                        <div class="feature-image">
+                            <img src="./Business permit.jpg" alt="Business Permit">
+                            <div class="feature-badge"><i class="fas fa-certificate"></i> Licensed</div>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                            <h3>Business Permit</h3>
+                            <p>Our Salon and Barbershop is fully registered under DTI, ensuring legitimacy and trustworthiness for all our valued customers.</p>
+                        </div>
                     </div>
-                    <div class="text-content">
-                        <h2>Salon Room</h2>
-                        <p>We offer a lot of Salon Services and giving you the best experience.</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="left">
-                <div class="row">
-                    <div class="image-box">
-                        <img src="./Stockroom.jpg" alt="Stockroom">
+                    <!-- Feature 2 - Barbershop -->
+                    <div class="feature-card reverse">
+                        <div class="feature-content">
+                            <div class="feature-icon"><i class="fas fa-cut"></i></div>
+                            <h3>Professional Barbershop</h3>
+                            <p>We offer excellent haircut and other barber services. Our skilled barbers specialize in modern fades, classic cuts, and precision grooming.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Precision Scissor Cuts</li>
+                                <li><i class="fas fa-check-circle"></i> Modern Fades & Tapers</li>
+                                <li><i class="fas fa-check-circle"></i> Hot Towel Treatments</li>
+                                <li><i class="fas fa-check-circle"></i> Beard Sculpting</li>
+                            </ul>
+                        </div>
+                        <div class="feature-image">
+                            <img src="./barbershopp.jpg" alt="Barbershop Interior">
+                            <div class="feature-badge"><i class="fas fa-scissors"></i> Barbershop</div>
+                        </div>
                     </div>
-                    <div class="text-content">
-                        <h2>Stockroom</h2>
-                        <p>We got dozens of stock for your needs! All sort and organized.</p>
+
+                    <!-- Feature 3 - Reception -->
+                    <div class="feature-card">
+                        <div class="feature-image">
+                            <img src="./reception.jpg" alt="Reception Area">
+                            <div class="feature-badge"><i class="fas fa-credit-card"></i> Cash/Cashless</div>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-icon"><i class="fas fa-laptop"></i></div>
+                            <h3>Modern Reception</h3>
+                            <p>You can pay your cash through the reception — Cash or Cashless (Online). We accept GCash, Maya, Credit/Debit Cards, and traditional cash payments.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 - Salon Room -->
+                    <div class="feature-card reverse">
+                        <div class="feature-content">
+                            <div class="feature-icon"><i class="fas fa-spa"></i></div>
+                            <h3>Luxurious Salon Room</h3>
+                            <p>We offer a lot of Salon Services and giving you the best experience. From hair coloring to rebonding and specialized treatments.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Hair Coloring & Highlights</li>
+                                <li><i class="fas fa-check-circle"></i> Rebonding & Relaxing</li>
+                                <li><i class="fas fa-check-circle"></i> Keratin Treatments</li>
+                                <li><i class="fas fa-check-circle"></i> Manicure & Pedicure</li>
+                            </ul>
+                        </div>
+                        <div class="feature-image">
+                            <img src="./Salon.jpg" alt="Salon Interior">
+                            <div class="feature-badge"><i class="fas fa-magic"></i> Salon Services</div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5 - Stockroom -->
+                    <div class="feature-card">
+                        <div class="feature-image">
+                            <img src="./Stockroom.jpg" alt="Stockroom">
+                            <div class="feature-badge"><i class="fas fa-boxes"></i> Fully Stocked</div>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-icon"><i class="fas fa-warehouse"></i></div>
+                            <h3>Organized Stockroom</h3>
+                            <p>We got dozens of stock for your needs! All sorted and organized. Premium products from trusted brands are always available for your service.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Additional Highlights Section -->
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What Sets Us Apart</span>
+                    <h2>Our Premium Advantages</h2>
+                    <p>Experience the Jun's Cut difference</p>
+                </div>
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-hand-sparkles"></i></div>
+                        <h3>Premium Products</h3>
+                        <p>We use only salon-grade, professional products that protect and nourish your hair.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-broom"></i></div>
+                        <h3>Spotless Cleanliness</h3>
+                        <p>All tools are sterilized after each use. Our salon follows strict sanitation protocols.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-clock"></i></div>
+                        <h3>Timely Service</h3>
+                        <p>We value your time. Efficient service without compromising quality.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-smile"></i></div>
+                        <h3>Friendly Staff</h3>
+                        <p>Our team is trained to provide warm, professional, and personalized service.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-wifi"></i></div>
+                        <h3>Free WiFi</h3>
+                        <p>Stay connected while you wait. Complimentary high-speed internet.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-music"></i></div>
+                        <h3>Relaxing Ambiance</h3>
+                        <p>Enjoy soothing music and a calm atmosphere during your service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Experience Our Features Firsthand</h2>
+                    <p>Visit Jun's Cut Salon and Barbershop today and discover why we're Makati's trusted grooming destination.</p>
+                    <div class="cta-buttons">
+                        <a href="book.html" class="btn-primary btn-large">Book an Appointment <i class="fas fa-calendar-check"></i></a>
+                        <a href="contact.html" class="btn-outline btn-large">Visit Our Location <i class="fas fa-map-marker-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Enhanced Footer -->
 <footer>
-    <div class="foot-gold">Jun's Cut Salon & Barbershop</div>
-    <p>Unit 110–111, Cartagena Suites, Poblacion, Makati City &nbsp;·&nbsp; +63 927 558 8671</p>
-  </footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="./junscut.jpg" alt="Jun's Cut Logo">
+            </div>
+            <p>Premium haircuts and grooming services in the heart of Makati. Your style, our passion.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61584180612265" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html">Book Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Visit Us</h4>
+            <p><i class="fas fa-location-dot"></i> Unit 110–111, Cartagena Suites,<br> Poblacion, Makati City, Philippines</p>
+            <p><i class="fas fa-phone"></i> +63 927 558 8671</p>
+            <p><i class="fas fa-envelope"></i> junluter1016@gmail.com</p>
+        </div>
+        <div class="footer-col">
+            <h4>Opening Hours</h4>
+            <ul class="hours">
+                <li>Mon - Fri: <span>9:00 AM - 8:00 PM</span></li>
+                <li>Saturday: <span>9:00 AM - 8:00 PM</span></li>
+                <li>Sunday: <span>10:00 AM - 7:00 PM</span></li>
+                <li class="holiday">Closed: Public Holidays</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Jun's Cut Salon and Barbershop. All rights reserved. | Crafted with <i class="fas fa-scissors"></i> in Makati</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

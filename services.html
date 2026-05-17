@@ -3,21 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jun's Cut Salon and Barbershop - Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Our Services | Jun's Cut Salon and Barbershop</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="./favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <a href="index.html" class="nav-logo">
-                <img src="./junscut.jpg" alt="Logo" class="logo">
+                <img src="./junscut.jpg" alt="Jun's Cut Salon Logo" class="logo">
             </a>
-            <ul class="nav-menu">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Home</a>
                 </li>
@@ -29,7 +32,6 @@
                 </li>
                 <li class="nav-item">
                     <a href="services.html" class="nav-link active">Services</a>
-                   
                 </li>
                 <li class="nav-item">
                     <a href="book.html" class="nav-link">Book Now</a>
@@ -42,159 +44,477 @@
     </header>
 
     <main>
-        <section id="services" class="services">
-            <div class="services-container">
-                <h1>OUR SERVICES</h1>
+        <!-- Page Hero Banner -->
+        <section class="page-hero services-hero">
+            <div class="page-hero-overlay"></div>
+            <div class="page-hero-content">
+                <h1>Our Services</h1>
+                <p>Premium grooming at affordable prices</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> <span>/</span> <span class="current">Services</span>
+                </div>
+            </div>
+        </section>
 
-                <div class="dropdown-container">
-                    <div class="dropdown" data-category="hair">
-                        <button class="dropdown-btn">Hair Services <i class="fas fa-chevron-down"></i></button>
-                        <div class="dropdown-content">
-                            <table>
-                                <tr><td>Hair Cut Men</td><td>Php 120.00</td></tr>
-                                <tr><td>+ Shampoo Conditioner</td><td>Php 30.00</td></tr>
-                                <tr><td>Hair Cut Women</td><td>Php 150.00</td></tr>
-                                <tr><td>+ Shampoo Conditioner</td><td>Php 30.00</td></tr>
-                                <tr><td>Hair Iron</td><td>Php 250.00</td></tr>
-                                <tr><td>Hair Iron</td><td>Php 350.00</td></tr>
-                                <tr><td>Coldwave Short</td><td>Php 600.00</td></tr>
-                                <tr><td>Coldwave Medium</td><td>Php 800.00</td></tr>
-                                <tr><td>Coldwave Bra Length</td><td>Php 1,000.00</td></tr>
-                                <tr><td>Coldwave w/ Treatment</td><td>Php 1,500.00</td></tr>
-                                <tr><td>Hair & Make up</td><td>Php 800.00</td></tr>
-                                <tr><td>Brow Shaving</td><td>Php 50.00</td></tr>
-                                <tr><td>Threading</td><td>Php 150.00</td></tr>
-                            </table>
+        <!-- Services Accordion Section -->
+        <section id="services" class="services-accordion-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What We Offer</span>
+                    <h2>Explore Our <span class="gold-text">Services</span></h2>
+                    <p>Choose from a wide range of professional hair and beauty services</p>
+                </div>
+
+                <div class="services-accordion">
+                    <!-- Hair Services -->
+                    <div class="accordion-item" data-category="hair">
+                        <button class="accordion-btn">
+                            <div class="accordion-icon"><i class="fas fa-cut"></i></div>
+                            <span>Hair Services</span>
+                            <i class="fas fa-chevron-down accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="service-table">
+                                <div class="service-row">
+                                    <span class="service-name">Hair Cut Men</span>
+                                    <span class="service-price">₱120.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">+ Shampoo Conditioner</span>
+                                    <span class="service-price">₱30.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair Cut Women</span>
+                                    <span class="service-price">₱150.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">+ Shampoo Conditioner</span>
+                                    <span class="service-price">₱30.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair Iron</span>
+                                    <span class="service-price">₱250.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair Iron (Long Hair)</span>
+                                    <span class="service-price">₱350.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Coldwave Short</span>
+                                    <span class="service-price">₱600.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Coldwave Medium</span>
+                                    <span class="service-price">₱800.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Coldwave Bra Length</span>
+                                    <span class="service-price">₱1,000.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Coldwave w/ Treatment</span>
+                                    <span class="service-price">₱1,500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair & Make up</span>
+                                    <span class="service-price">₱800.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Brow Shaving</span>
+                                    <span class="service-price">₱50.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Threading</span>
+                                    <span class="service-price">₱150.00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dropdown" data-category="color">
-                        <button class="dropdown-btn">Color Services <i class="fas fa-chevron-down"></i></button>
-                        <div class="dropdown-content">
-                            <table>
-                                <tr><td>Roots Color</td><td>Php 500.00</td></tr>
-                                <tr><td>Hair Color start at</td><td>Php 1,000.00</td></tr>
-                                <tr><td>Hair Color w/ Treatment & Cut</td><td>Php 1,500.00</td></tr>
-                                <tr><td>Hair Color w/ Botox & Cut</td><td>Php 1,800.00</td></tr>
-                                <tr><td>Hair Color w/ Brazilian Keratin</td><td>Php 2,000.00</td></tr>
-                            </table>
+                    <!-- Color Services -->
+                    <div class="accordion-item" data-category="color">
+                        <button class="accordion-btn">
+                            <div class="accordion-icon"><i class="fas fa-palette"></i></div>
+                            <span>Color Services</span>
+                            <i class="fas fa-chevron-down accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="service-table">
+                                <div class="service-row">
+                                    <span class="service-name">Roots Color</span>
+                                    <span class="service-price">₱500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair Color start at</span>
+                                    <span class="service-price">₱1,000.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair Color w/ Treatment & Cut</span>
+                                    <span class="service-price">₱1,500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair Color w/ Botox & Cut</span>
+                                    <span class="service-price">₱1,800.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair Color w/ Brazilian Keratin</span>
+                                    <span class="service-price">₱2,000.00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dropdown" data-category="brazilian">
-                        <button class="dropdown-btn">Brazilian & Rebond <i class="fas fa-chevron-down"></i></button>
-                        <div class="dropdown-content">
-                            <table>
-                                <tr><td>Brazilian Blowout</td><td>Php 800.00</td></tr>
-                                <tr><td>Brazilian Keratin</td><td>Php 1,000.00</td></tr>
-                                <tr><td>Brazilian Prime</td><td>Php 2,000.00</td></tr>
-                                <tr><td>Rebond</td><td>Php 1,200.00</td></tr>
-                                <tr><td>Kerabond</td><td>Php 1,500.00</td></tr>
-                                <tr><td>Organic Rebond</td><td>Php 1,500.00</td></tr>
-                                <tr><td>Rebond w/ Brazilian Botox</td><td>Php 2,000.00</td></tr>
-                                <tr><td>Rebond w/ Brazilian Keratin</td><td>Php 2,500.00</td></tr>
-                                <tr><td>Rebond w/ Hair Color & Botox</td><td>Php 3,000.00</td></tr>
-                                <tr><td>Japanese Rebond w/ Treatment</td><td>Php 2,500.00</td></tr>
-                                <tr><td>Japanese Rebond w/ Hair Color</td><td>Php 2,800.00</td></tr>
-                            </table>
+                    <!-- Brazilian & Rebond -->
+                    <div class="accordion-item" data-category="brazilian">
+                        <button class="accordion-btn">
+                            <div class="accordion-icon"><i class="fas fa-magic"></i></div>
+                            <span>Brazilian & Rebond</span>
+                            <i class="fas fa-chevron-down accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="service-table">
+                                <div class="service-row">
+                                    <span class="service-name">Brazilian Blowout</span>
+                                    <span class="service-price">₱800.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Brazilian Keratin</span>
+                                    <span class="service-price">₱1,000.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Brazilian Prime</span>
+                                    <span class="service-price">₱2,000.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Rebond</span>
+                                    <span class="service-price">₱1,200.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Kerabond</span>
+                                    <span class="service-price">₱1,500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Organic Rebond</span>
+                                    <span class="service-price">₱1,500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Rebond w/ Brazilian Botox</span>
+                                    <span class="service-price">₱2,000.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Rebond w/ Brazilian Keratin</span>
+                                    <span class="service-price">₱2,500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Rebond w/ Hair Color & Botox</span>
+                                    <span class="service-price">₱3,000.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Japanese Rebond w/ Treatment</span>
+                                    <span class="service-price">₱2,500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Japanese Rebond w/ Hair Color</span>
+                                    <span class="service-price">₱2,800.00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dropdown" data-category="treatment">
-                        <button class="dropdown-btn">Treatment <i class="fas fa-chevron-down"></i></button>
-                        <div class="dropdown-content">
-                            <table>
-                                <tr><td>Cellophane Clear</td><td>Php 500.00</td></tr>
-                                <tr><td>Hair Spa</td><td>Php 300.00</td></tr>
-                                <tr><td>Hot Oil</td><td>Php 250.00</td></tr>
-                                <tr><td>Hair Spa Loreal</td><td>Php 800.00</td></tr>
-                                <tr><td>Hair Mask</td><td>Php 400.00</td></tr>
-                                <tr><td>Keratin Mask</td><td>Php 300.00</td></tr>
-                            </table>
+                    <!-- Treatment -->
+                    <div class="accordion-item" data-category="treatment">
+                        <button class="accordion-btn">
+                            <div class="accordion-icon"><i class="fas fa-spa"></i></div>
+                            <span>Treatment</span>
+                            <i class="fas fa-chevron-down accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="service-table">
+                                <div class="service-row">
+                                    <span class="service-name">Cellophane Clear</span>
+                                    <span class="service-price">₱500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair Spa</span>
+                                    <span class="service-price">₱300.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hot Oil</span>
+                                    <span class="service-price">₱250.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair Spa Loreal</span>
+                                    <span class="service-price">₱800.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hair Mask</span>
+                                    <span class="service-price">₱400.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Keratin Mask</span>
+                                    <span class="service-price">₱300.00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dropdown" data-category="removal">
-                        <button class="dropdown-btn">Removal Services <i class="fas fa-chevron-down"></i></button>
-                        <div class="dropdown-content">
-                            <table>
-                                <tr><td>Gel Polish (My work)</td><td>Php 150.00</td></tr>
-                                <tr><td>Gel Polish (Not my work)</td><td>Php 200.00</td></tr>
-                                <tr><td>Soft Gel (My work)</td><td>Php 150.00</td></tr>
-                                <tr><td>Soft Gel (Not my work)</td><td>Php 200.00</td></tr>
-                            </table>
+                    <!-- Removal Services -->
+                    <div class="accordion-item" data-category="removal">
+                        <button class="accordion-btn">
+                            <div class="accordion-icon"><i class="fas fa-eraser"></i></div>
+                            <span>Removal Services</span>
+                            <i class="fas fa-chevron-down accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="service-table">
+                                <div class="service-row">
+                                    <span class="service-name">Gel Polish (My work)</span>
+                                    <span class="service-price">₱150.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Gel Polish (Not my work)</span>
+                                    <span class="service-price">₱200.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Soft Gel (My work)</span>
+                                    <span class="service-price">₱150.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Soft Gel (Not my work)</span>
+                                    <span class="service-price">₱200.00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dropdown" data-category="nail">
-                        <button class="dropdown-btn">Nail Care <i class="fas fa-chevron-down"></i></button>
-                        <div class="dropdown-content">
-                            <table>
-                                <tr><td>Classic Manicure</td><td>Php 120.00</td></tr>
-                                <tr><td>Classic Pedicure</td><td>Php 130.00</td></tr>
-                                <tr><td>Mani Gel</td><td>Php 350.00</td></tr>
-                                <tr><td>Pedi Gel</td><td>Php 450.00</td></tr>
-                                <tr><td>Soft Gel Plain</td><td>Php 899.00</td></tr>
-                                <tr><td>Soft Gel Full Design</td><td>Php 1,800.00</td></tr>
-                                <tr><td>Foot Spa</td><td>Php 250.00</td></tr>
-                            </table>
+                    <!-- Nail Care -->
+                    <div class="accordion-item" data-category="nail">
+                        <button class="accordion-btn">
+                            <div class="accordion-icon"><i class="fas fa-hand-peace"></i></div>
+                            <span>Nail Care</span>
+                            <i class="fas fa-chevron-down accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="service-table">
+                                <div class="service-row">
+                                    <span class="service-name">Classic Manicure</span>
+                                    <span class="service-price">₱120.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Classic Pedicure</span>
+                                    <span class="service-price">₱130.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Mani Gel</span>
+                                    <span class="service-price">₱350.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Pedi Gel</span>
+                                    <span class="service-price">₱450.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Soft Gel Plain</span>
+                                    <span class="service-price">₱899.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Soft Gel Full Design</span>
+                                    <span class="service-price">₱1,800.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Foot Spa</span>
+                                    <span class="service-price">₱250.00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dropdown" data-category="addons">
-                        <button class="dropdown-btn">Add-Ons <i class="fas fa-chevron-down"></i></button>
-                        <div class="dropdown-content">
-                            <table>
-                                <tr><td>Rhine Stone</td><td>Php 20.00+</td></tr>
-                                <tr><td>French Tip</td><td>Php 30.00</td></tr>
-                                <tr><td>Nail Art</td><td>Php 20.00</td></tr>
-                                <tr><td>Ombre</td><td>Php 25.00</td></tr>
-                                <tr><td>Chrome</td><td>Php 40.00</td></tr>
-                                <tr><td>Stickers</td><td>Php 10.00</td></tr>
-                            </table>
+                    <!-- Add-Ons -->
+                    <div class="accordion-item" data-category="addons">
+                        <button class="accordion-btn">
+                            <div class="accordion-icon"><i class="fas fa-plus-circle"></i></div>
+                            <span>Add-Ons</span>
+                            <i class="fas fa-chevron-down accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="service-table">
+                                <div class="service-row">
+                                    <span class="service-name">Rhine Stone</span>
+                                    <span class="service-price">₱20.00+</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">French Tip</span>
+                                    <span class="service-price">₱30.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Nail Art</span>
+                                    <span class="service-price">₱20.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Ombre</span>
+                                    <span class="service-price">₱25.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Chrome</span>
+                                    <span class="service-price">₱40.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Stickers</span>
+                                    <span class="service-price">₱10.00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dropdown" data-category="waxing">
-                        <button class="dropdown-btn">Waxing <i class="fas fa-chevron-down"></i></button>
-                        <div class="dropdown-content">
-                            <table>
-                                <tr><td>Underarm Wax</td><td>Php 250.00</td></tr>
-                                <tr><td>Half Leg Wax</td><td>Php 500.00</td></tr>
-                                <tr><td>Full Leg Wax</td><td>Php 600.00</td></tr>
-                                <tr><td>Half Arms Wax</td><td>Php 350.00</td></tr>
-                                <tr><td>Full Arms Wax</td><td>Php 450.00</td></tr>
-                            </table>
+                    <!-- Waxing -->
+                    <div class="accordion-item" data-category="waxing">
+                        <button class="accordion-btn">
+                            <div class="accordion-icon"><i class="fas fa-feather-alt"></i></div>
+                            <span>Waxing</span>
+                            <i class="fas fa-chevron-down accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="service-table">
+                                <div class="service-row">
+                                    <span class="service-name">Underarm Wax</span>
+                                    <span class="service-price">₱250.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Half Leg Wax</span>
+                                    <span class="service-price">₱500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Full Leg Wax</span>
+                                    <span class="service-price">₱600.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Half Arms Wax</span>
+                                    <span class="service-price">₱350.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Full Arms Wax</span>
+                                    <span class="service-price">₱450.00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dropdown" data-category="other">
-                        <button class="dropdown-btn">Other Services <i class="fas fa-chevron-down"></i></button>
-                        <div class="dropdown-content">
-                            <table>
-                                <tr><td>Foot Spa w/ Mani & Pedi</td><td>Php 500.00</td></tr>
-                                <tr><td>Foot Spa w/ Gel & Pedi</td><td>Php 1,200.00</td></tr>
-                                <tr><td>Eyelash Lift</td><td>Php 500.00</td></tr>
-                                <tr><td>Eyelash Lift (NATURAL LOOK)</td><td>Php 500.00</td></tr>
-                                <tr><td>Eyelash Extension (CAT EYE)</td><td>Php 800.00</td></tr>
-                                <tr><td>Eyelash Extension (MASCARA EFFECT)</td><td>Php 1,000.00</td></tr>
-                                <tr><td>Eyebrow Tint</td><td>Php 300.00</td></tr>
-                                <tr><td>Eyebrow (Lamination w/tint)</td><td>Php 500.00</td></tr>
-                                <tr><td>Ear Candling</td><td>Php 150.00</td></tr>
-                                <tr><td>Hand Paraffin Wax</td><td>Php 300.00</td></tr>
-                                <tr><td>Foot Paraffin Wax</td><td>Php 400.00</td></tr>
-                                <tr><td>Foot Reflex</td><td>Php 400.00</td></tr>
-                            </table>
+                    <!-- Other Services -->
+                    <div class="accordion-item" data-category="other">
+                        <button class="accordion-btn">
+                            <div class="accordion-icon"><i class="fas fa-ellipsis-h"></i></div>
+                            <span>Other Services</span>
+                            <i class="fas fa-chevron-down accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="service-table">
+                                <div class="service-row">
+                                    <span class="service-name">Foot Spa w/ Mani & Pedi</span>
+                                    <span class="service-price">₱500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Foot Spa w/ Gel & Pedi</span>
+                                    <span class="service-price">₱1,200.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Eyelash Lift</span>
+                                    <span class="service-price">₱500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Eyelash Lift (NATURAL LOOK)</span>
+                                    <span class="service-price">₱500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Eyelash Extension (CAT EYE)</span>
+                                    <span class="service-price">₱800.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Eyelash Extension (MASCARA EFFECT)</span>
+                                    <span class="service-price">₱1,000.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Eyebrow Tint</span>
+                                    <span class="service-price">₱300.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Eyebrow (Lamination w/tint)</span>
+                                    <span class="service-price">₱500.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Ear Candling</span>
+                                    <span class="service-price">₱150.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Hand Paraffin Wax</span>
+                                    <span class="service-price">₱300.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Foot Paraffin Wax</span>
+                                    <span class="service-price">₱400.00</span>
+                                </div>
+                                <div class="service-row">
+                                    <span class="service-name">Foot Reflex</span>
+                                    <span class="service-price">₱400.00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="services-cta">
+                    <p>Ready to book your service?</p>
+                    <a href="book.html" class="btn-primary">Book an Appointment Now <i class="fas fa-calendar-check"></i></a>
                 </div>
             </div>
         </section>
     </main>
-    <footer>
-        <div class="foot-gold">Jun's Cut Salon & Barbershop</div>
-        <p>Unit 110–111, Cartagena Suites, Poblacion, Makati City &nbsp;·&nbsp; +63 927 558 8671</p>
-      </footer>
+
+    <!-- Enhanced Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="./junscut.jpg" alt="Jun's Cut Logo">
+            </div>
+            <p>Premium haircuts and grooming services in the heart of Makati. Your style, our passion.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61584180612265" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html">Book Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Visit Us</h4>
+            <p><i class="fas fa-location-dot"></i> Unit 110–111, Cartagena Suites,<br> Poblacion, Makati City, Philippines</p>
+            <p><i class="fas fa-phone"></i> +63 927 558 8671</p>
+            <p><i class="fas fa-envelope"></i> junluter1016@gmail.com</p>
+        </div>
+        <div class="footer-col">
+            <h4>Opening Hours</h4>
+            <ul class="hours">
+                <li>Mon - Fri: <span>9:00 AM - 8:00 PM</span></li>
+                <li>Saturday: <span>9:00 AM - 8:00 PM</span></li>
+                <li>Sunday: <span>10:00 AM - 7:00 PM</span></li>
+                <li class="holiday">Closed: Public Holidays</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Jun's Cut Salon and Barbershop. All rights reserved. | Crafted with <i class="fas fa-scissors"></i> in Makati</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+    
 </body>
 
 </html>
