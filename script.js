@@ -505,7 +505,50 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             };
         });
-// ========================================
-// 15. CONSOLE LOG FOR DEVELOPMENT (Remove in production)
-// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navOverlay = document.getElementById('nav-overlay');
+    const body = document.body;
+    
+    if (hamburger && navMenu) {
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            if (navOverlay) navOverlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+        
+        hamburger.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                if (navOverlay) navOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+        
+        // Close menu when clicking overlay
+        if (navOverlay) {
+            navOverlay.addEventListener('click', toggleMenu);
+        }
+    }
+});
+
+const phoneInput = document.getElementById('phone');
+
+phoneInput.addEventListener('input', function(e) {
+    // Remove any non-digit characters
+    this.value = this.value.replace(/\D/g, '');
+    
+    // Limit to 11 digits
+    if (this.value.length > 11) {
+        this.value = this.value.slice(0, 11);
+    }
+});
+
 console.log('Jun\'s Cut Salon - Website loaded successfully! ✅');

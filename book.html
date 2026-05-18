@@ -12,36 +12,39 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="index.html" class="nav-logo">
-                <img src="./junscut.jpg" alt="Jun's Cut Salon Logo" class="logo">
-            </a>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="features.html" class="nav-link">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a href="services.html" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="book.html" class="nav-link active">Book Now</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="./junscut.jpg" alt="Logo" class="logo">
+        </a>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="features.html" class="nav-link">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="services.html" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="book.html" class="nav-link">Book Now</a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+</header>
 
     <main>
         <!-- Page Hero Banner -->
@@ -65,9 +68,8 @@
                         <div class="info-card">
                             <h3><i class="fas fa-clock"></i> Opening Hours</h3>
                             <ul class="info-hours">
-                                <li><span>Monday - Friday:</span> <strong>9:00 AM - 8:00 PM</strong></li>
-                                <li><span>Saturday:</span> <strong>9:00 AM - 8:00 PM</strong></li>
-                                <li><span>Sunday:</span> <strong>10:00 AM - 6:00 PM</strong></li>
+                                <li><span>Monday - Sunday:</span> </li>
+                                <li><strong>10:00 AM - 7:00 PM</strong></li>
                             </ul>
                         </div>
                         <div class="info-card">
@@ -148,8 +150,6 @@
                                     <label for="time"><i class="fas fa-clock"></i> Preferred Time *</label>
                                     <select id="time" name="time" required>
                                         <option value="">Select a time</option>
-                                        <option value="09:00">9:00 AM</option>
-                                        <option value="09:30">9:30 AM</option>
                                         <option value="10:00">10:00 AM</option>
                                         <option value="10:30">10:30 AM</option>
                                         <option value="11:00">11:00 AM</option>
@@ -171,8 +171,6 @@
                                     </select>
                                 </div>
                             </div>
-
-                            <!-- REMOVED: Preferred Barber/Stylist field -->
 
                             <div class="form-group">
                                 <label for="message"><i class="fas fa-comment"></i> Special Requests or Notes</label>
@@ -222,10 +220,10 @@
                         <div class="price">₱1,200+</div>
                     </div>
                     <div class="popular-card">
-                        <i class="fas fa-blade"></i>
-                        <h3>Hot Towel Shave</h3>
-                        <p>Classic straight razor shave</p>
-                        <div class="price">₱280</div>
+                        <div class="service-icon"><i class="fas fa-spa"></i></div>
+                        <h3>Hair Treatment</h3>
+                        <p>Deep conditioning & keratin repair</p>
+                        <div class="price">₱550</div>
                     </div>
                     <div class="popular-card">
                         <i class="fas fa-hand-peace"></i>
@@ -270,9 +268,7 @@
         <div class="footer-col">
             <h4>Opening Hours</h4>
             <ul class="hours">
-                <li>Mon - Fri: <span>9:00 AM - 8:00 PM</span></li>
-                <li>Saturday: <span>9:00 AM - 8:00 PM</span></li>
-                <li>Sunday: <span>10:00 AM - 7:00 PM</span></li>
+                <li>Mon - Sun: <span>10:00 AM - 7:00 PM</span></li>
                 <li class="holiday">Closed: Public Holidays</li>
             </ul>
         </div>
