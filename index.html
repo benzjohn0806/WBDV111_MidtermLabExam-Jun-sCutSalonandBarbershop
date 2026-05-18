@@ -143,7 +143,7 @@
     <div class="info-card">
         <h3><i class="far fa-clock"></i> Opening Hours</h3>
         <ul class="info-hours">
-            <li><span>Mon - Sun: 10:00 AM - 7:00 PM</span></li>
+            <li><span>Mon - Sun: 10:00 AM -      7:00 PM</span></li>
         </ul>
     </div>
     
@@ -187,17 +187,27 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Service Type</label>
-                        <select id="service" required>
-                            <option value="">Select a service</option>
-                            <option value="haircut">Hair Cut - ₱120+</option>
-                            <option value="haircolor">Hair Color - ₱1,000+</option>
-                            <option value="rebond">Rebond - ₱1,200+</option>
-                            <option value="treatment">Treatment - ₱250+</option>
-                            <option value="manicure">Manicure/Pedicure - ₱120+</option>
-                            <option value="waxing">Waxing - ₱250+</option>
-                            <option value="eyelash">Eyelash Services - ₱500+</option>
-                        </select>
-                    </div>
+                                <div class="form-group">
+                                    <select id="service" name="service" required>
+                                        <option value="">Select a service</option>
+                                        <option value="haircut-men">Hair Cut Men - ₱120</option>
+                                        <option value="haircut-women">Hair Cut Women - ₱150</option>
+                                        <option value="hair-iron">Hair Iron - ₱250</option>
+                                        <option value="coldwave">Coldwave - ₱600+</option>
+                                        <option value="hair-color">Hair Color - ₱1,000+</option>
+                                        <option value="brazilian">Brazilian Blowout - ₱800+</option>
+                                        <option value="rebond">Rebond - ₱1,200+</option>
+                                        <option value="treatment">Hair Treatment - ₱500+</option>
+                                        <option value="manicure">Manicure - ₱120</option>
+                                        <option value="pedicure">Pedicure - ₱130</option>
+                                        <option value="soft-gel">Soft Gel Nails - ₱899+</option>
+                                        <option value="waxing">Waxing - ₱250+</option>
+                                        <option value="eyelash">Eyelash Services - ₱500+</option>
+                                        <option value="foot-spa">Foot Spa - ₱250</option>
+                                        <option value="other">Other Service</option>
+                                    </select>
+                                </div>
+                            </div>
                     <div class="form-group">
                         <label>Preferred Date</label>
                         <input type="date" id="date" required>
