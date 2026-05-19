@@ -615,16 +615,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const dateInput = document.getElementById('date');
         const messageInput = document.getElementById('message');
         
-        // ========== FULL NAME - Letters and spaces only ==========
-        if (fullNameInput) {
-            fullNameInput.addEventListener('input', function() {
-                this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
-                this.value = this.value.replace(/\b\w/g, function(char) {
-                    return char.toUpperCase();
-                });
-                this.value = this.value.replace(/\s+/g, ' ').trim();
-            });
-        }
+// ========== FULL NAME - Letters and spaces only ==========
+if (fullNameInput) {
+    fullNameInput.addEventListener('input', function() {
+        // Remove numbers and special characters, keep letters and spaces
+        this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        
+        // Capitalize first letter of each word
+        this.value = this.value.replace(/\b\w/g, function(char) {
+            return char.toUpperCase();
+        });
+    });
+}
         
         // ========== PHONE NUMBER - Exactly 11 digits ==========
         if (phoneInput) {
@@ -643,6 +645,17 @@ document.addEventListener('DOMContentLoaded', function() {
             dateInput.setAttribute('min', today);
         }
         
+                if (timeInput) {
+            // Set default time options if needed
+            timeInput.addEventListener('change', function() {
+                if (this.value && this.value !== '') {
+                    this.style.borderColor = '#2ecc71';
+                    hideError(this);
+                } else {
+                    this.style.borderColor = '#e74c3c';
+                }
+            });
+        }
         // ========== FORM SUBMIT ==========
         bookingForm.addEventListener('submit', function(e) {
             // Prevent default form submission
@@ -753,27 +766,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const emailInput = document.getElementById('email');
         const phoneInput = document.getElementById('phone');
         const subjectSelect = document.getElementById('subject');
+        
         const messageInput = document.getElementById('message');
         
-        // ========== FULL NAME - Letters and spaces only ==========
-        if (fullNameInput) {
-            fullNameInput.addEventListener('input', function() {
-                // Remove numbers and special characters
-                this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
-                // Capitalize first letter of each word
-                this.value = this.value.replace(/\b\w/g, function(char) {
-                    return char.toUpperCase();
-                });
-                // Remove consecutive spaces
-                this.value = this.value.replace(/\s+/g, ' ').trim();
-                
-                // Clear error styling
-                if (this.value.length >= 2) {
-                    this.style.borderColor = '#e0d5c5';
-                    hideError(this);
-                }
-            });
-        }
+// ========== FULL NAME - Letters and spaces only ==========
+if (fullNameInput) {
+    fullNameInput.addEventListener('input', function() {
+        // Remove numbers and special characters, keep letters and spaces
+        this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        
+        // Capitalize first letter of each word
+        this.value = this.value.replace(/\b\w/g, function(char) {
+            return char.toUpperCase();
+        });
+    });
+}
         
         // ========== EMAIL VALIDATION ==========
         if (emailInput) {
