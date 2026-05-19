@@ -2868,42 +2868,37 @@ body {
 /* Contact form styles */
 /* Contact form success message */
 /* Contact form success message styles */
-.contact-success {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 400px;
+/* Contact form success message */
+#contactSuccess {
+    display: none;
+    margin-top: 20px;
 }
 
 .success-message-centered {
     text-align: center;
-    padding: 50px 30px;
+    padding: 40px 30px;
     background: linear-gradient(135deg, #fff 0%, #f9f5f0 100%);
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border: 1px solid #e0d5c5;
-    width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
 }
 
 .success-message-centered i {
-    font-size: 70px;
+    font-size: 60px;
     color: #2ecc71;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .success-message-centered h3 {
     color: #1a1410;
-    font-size: 28px;
-    margin-bottom: 15px;
-    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .success-message-centered p {
     color: #555;
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 15px;
+    margin-bottom: 8px;
 }
 
 .success-message-centered strong {
@@ -2914,22 +2909,21 @@ body {
     background: #c89b6d;
     color: white;
     border: none;
-    padding: 12px 30px;
+    padding: 10px 25px;
     border-radius: 40px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 15px;
     transition: all 0.3s ease;
 }
 
 .btn-new-message:hover {
     background: #a87e54;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(200, 155, 109, 0.3);
 }
 
-/* Error message styles */
+/* Error styles */
 .error-message {
     color: #e74c3c;
     font-size: 11px;
@@ -2937,7 +2931,6 @@ body {
     display: block;
 }
 
-/* Required field star */
 .required {
     color: #e74c3c;
 }

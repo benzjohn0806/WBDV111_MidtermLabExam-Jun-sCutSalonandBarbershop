@@ -89,65 +89,58 @@
 
                     </div>
                     
-                </div>
-                
-                <!-- Right Panel - Contact Form -->
-                <div class="contact-form-panel">
-                    <!-- Form Header - will be hidden on success -->
-                    <div class="form-header" id="formHeader">
-                        <h3>Send Us a Message</h3>
-                        <p>Fill out the form below and we'll get back to you as soon as possible</p>
-                    </div>
-                    
-                    <!-- The Form -->
-                    <form class="contact-form-enhanced" id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Full Name <span class="required">*</span></label>
-                                <input type="text" id="fullName" placeholder="Enter your full name">
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address <span class="required">*</span></label>
-                                <input type="email" id="email" placeholder="Enter your email address">
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="tel" id="phone" placeholder="Enter your phone number (11 digits)">
-                                <small style="font-size: 11px; color: #888;">Optional - 11 digits only</small>
-                            </div>
-                            <div class="form-group">
-                                <label>Subject <span class="required">*</span></label>
-                                <select id="subject">
-                                    <option value="">Select a subject</option>
-                                    <option value="inquiry">General Inquiry</option>
-                                    <option value="booking">Booking Question</option>
-                                    <option value="feedback">Feedback</option>
-                                    <option value="complaint">Report an Issue</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Message <span class="required">*</span></label>
-                            <textarea id="message" rows="5" placeholder="Please provide details about your inquiry..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                    
-                    <!-- Success message div - centered -->
-                    <div id="contactSuccess" style="display: none;"></div>
-                </div>
+                </div>         
+<!-- Right Panel - Contact Form -->
+<div class="contact-form-panel">
+    <div class="form-header" id="formHeader">
+        <h3>Send Us a Message</h3>
+        <p>Fill out the form below and we'll get back to you as soon as possible</p>
+    </div>
+    
+    <form class="contact-form-enhanced" id="contactForm">
+        <div class="form-row">
+            <div class="form-group">
+                <label>Full Name <span class="required">*</span></label>
+                <input type="text" id="fullName" placeholder="Enter your full name">
             </div>
+            <div class="form-group">
+                <label>Email Address <span class="required">*</span></label>
+                <input type="email" id="email" placeholder="Enter your email address">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number (11 digits)">
+            </div>
+            <div class="form-group">
+                <label>Subject <span class="required">*</span></label>
+                <select id="subject">
+                    <option value="">Select a subject</option>
+                    <option value="inquiry">General Inquiry</option>
+                    <option value="booking">Booking Question</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="complaint">Report an Issue</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Message <span class="required">*</span></label>
+            <textarea id="message" rows="5" placeholder="Please provide details about your inquiry..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+    </form>
+    
+    <!-- SUCCESS MESSAGE DIV - Make sure this exists -->
+    <div id="contactSuccess" style="display: none;"></div>
+</div>
         </section>
 
-<!-- Add success message div -->
-<div id="contactSuccess" style="display: none;"></div>
 
 </section>
 
