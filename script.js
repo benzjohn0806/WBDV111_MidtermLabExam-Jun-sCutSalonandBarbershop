@@ -466,89 +466,620 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Contact Form Submission
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-            const contactSuccess = document.getElementById('contactSuccess');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const fullName = document.getElementById('fullName').value;
-                    const email = document.getElementById('email').value;
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value;
-                    
-                    if (!fullName || !email || !subject || !message) {
-                        alert('Please fill in all required fields (*)');
-                        return;
-                    }
-                    
-                    // Hide form, show success message
-                    contactForm.style.display = 'none';
-                    if (contactSuccess) {
-                        contactSuccess.style.display = 'block';
-                    }
-                    
-                    console.log('Contact form submitted:', {fullName, email, subject, message});
-                });
-            }
-            
-            // Reset contact form function
-            window.resetContactForm = function() {
-                if (contactForm) {
-                    contactForm.reset();
-                    contactForm.style.display = 'block';
-                    if (contactSuccess) {
-                        contactSuccess.style.display = 'none';
-                    }
-                }
-            };
-        });
+// ========== MOBILE HAMBURGER MENU FIX ==========
 
+// Simplified hamburger menu
+// ========== MOBILE HAMBURGER MENU - COMPLETE FIX ==========
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    const navOverlay = document.getElementById('nav-overlay');
+    
+    // Get all necessary elements
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navOverlay = document.querySelector('.nav-overlay');
     const body = document.body;
     
-    if (hamburger && navMenu) {
-        function toggleMenu() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            if (navOverlay) navOverlay.classList.toggle('active');
-            body.classList.toggle('menu-open');
+    // Check if hamburger exists
+    if (!hamburger || !navMenu) {
+        console.log('Hamburger or nav menu not found');
+        return;
+    }
+    
+    // Function to open menu
+    function openMenu() {
+        hamburger.classList.add('active');
+        navMenu.classList.add('active');
+        if (navOverlay) navOverlay.classList.add('active');
+        body.classList.add('menu-open');
+        body.style.position = 'fixed';
+        body.style.width = '100%';
+    }
+    
+    // Function to close menu
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        if (navOverlay) navOverlay.classList.remove('active');
+        body.classList.remove('menu-open');
+        body.style.position = '';
+        body.style.width = '';
+    }
+    
+    // Toggle menu function
+    function toggleMenu() {
+        if (navMenu.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    }
+    
+    // Add click event to hamburger
+    hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu();
+    });
+    
+    // Close menu when clicking on nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            closeMenu();
+        });
+    });
+    
+    // Close menu when clicking overlay
+    if (navOverlay) {
+        navOverlay.addEventListener('click', function() {
+            closeMenu();
+        });
+    }
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+    
+    // Fix for window resize - close menu if screen becomes larger
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        }, 250);
+    });
+    
+    // Prevent horizontal scroll on touch devices
+    document.addEventListener('touchmove', function(e) {
+        if (body.classList.contains('menu-open')) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+});
+
+// ========== FIX HORIZONTAL SCROLL ON ALL PAGES ==========
+(function() {
+    // Prevent horizontal scroll
+    const body = document.body;
+    const html = document.documentElement;
+    
+    function preventHorizontalScroll() {
+        if (window.scrollX > 0) {
+            window.scrollTo(0, window.scrollY);
+        }
+    }
+    
+    window.addEventListener('scroll', preventHorizontalScroll);
+    
+    // Fix for touch devices
+    document.addEventListener('touchstart', function(e) {
+        let startX = e.touches[0].clientX;
+        
+        function onTouchMove(e) {
+            let currentX = e.touches[0].clientX;
+            let diffX = currentX - startX;
+            
+            // If swiping right when scrolled to left edge
+            if (diffX > 0 && window.scrollX === 0) {
+                e.preventDefault();
+            }
         }
         
-        hamburger.addEventListener('click', toggleMenu);
+        document.addEventListener('touchmove', onTouchMove, { passive: false });
+        document.addEventListener('touchend', function() {
+            document.removeEventListener('touchmove', onTouchMove);
+        });
+    });
+})();
+
+// ========== APPOINTMENT BOOKING FORM - COMPLETE FIX ==========
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingSuccess = document.getElementById('bookingSuccess');
+    
+    if (bookingForm) {
         
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                if (navOverlay) navOverlay.classList.remove('active');
-                body.classList.remove('menu-open');
+        // Disable browser's default validation
+        bookingForm.setAttribute('novalidate', true);
+        
+        // Get form elements
+        const fullNameInput = document.getElementById('fullName');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const serviceSelect = document.getElementById('service');
+        const dateInput = document.getElementById('date');
+        const messageInput = document.getElementById('message');
+        
+        // ========== FULL NAME - Letters and spaces only ==========
+        if (fullNameInput) {
+            fullNameInput.addEventListener('input', function() {
+                this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+                this.value = this.value.replace(/\b\w/g, function(char) {
+                    return char.toUpperCase();
+                });
+                this.value = this.value.replace(/\s+/g, ' ').trim();
+            });
+        }
+        
+        // ========== PHONE NUMBER - Exactly 11 digits ==========
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function() {
+                let cleaned = this.value.replace(/\D/g, '');
+                if (cleaned.length > 11) {
+                    cleaned = cleaned.slice(0, 11);
+                }
+                this.value = cleaned;
+            });
+        }
+        
+        // ========== DATE VALIDATION ==========
+        if (dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        }
+        
+        // ========== FORM SUBMIT ==========
+        bookingForm.addEventListener('submit', function(e) {
+            // Prevent default form submission
+            e.preventDefault();
+            
+            // Get values
+            const fullName = fullNameInput ? fullNameInput.value.trim() : '';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const phone = phoneInput ? phoneInput.value.trim() : '';
+            const service = serviceSelect ? serviceSelect.value : '';
+            const date = dateInput ? dateInput.value : '';
+            
+            // Validation array
+            let errors = [];
+            
+            // Reset border colors
+            if (fullNameInput) fullNameInput.style.borderColor = '#e0d5c5';
+            if (emailInput) emailInput.style.borderColor = '#e0d5c5';
+            if (phoneInput) phoneInput.style.borderColor = '#e0d5c5';
+            if (serviceSelect) serviceSelect.style.borderColor = '#e0d5c5';
+            if (dateInput) dateInput.style.borderColor = '#e0d5c5';
+            
+            // Validate Full Name
+            if (!fullName) {
+                errors.push('Full Name is required');
+                if (fullNameInput) fullNameInput.style.borderColor = '#e74c3c';
+            } else if (fullName.length < 2) {
+                errors.push('Name must be at least 2 characters');
+                if (fullNameInput) fullNameInput.style.borderColor = '#e74c3c';
+            }
+            
+            // Validate Email (optional)
+            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errors.push('Please enter a valid email address');
+                if (emailInput) emailInput.style.borderColor = '#e74c3c';
+            }
+            
+            // Validate Phone
+            if (!phone) {
+                errors.push('Phone Number is required');
+                if (phoneInput) phoneInput.style.borderColor = '#e74c3c';
+            } else if (phone.length !== 11) {
+                errors.push('Phone number must be exactly 11 digits');
+                if (phoneInput) phoneInput.style.borderColor = '#e74c3c';
+            } else if (!/^\d+$/.test(phone)) {
+                errors.push('Phone number can only contain digits');
+                if (phoneInput) phoneInput.style.borderColor = '#e74c3c';
+            }
+            
+            // Validate Service
+            if (!service || service === '') {
+                errors.push('Please select a service');
+                if (serviceSelect) serviceSelect.style.borderColor = '#e74c3c';
+            }
+            
+            // Validate Date
+            if (!date) {
+                errors.push('Please select a preferred date');
+                if (dateInput) dateInput.style.borderColor = '#e74c3c';
+            } else {
+                const today = new Date().toISOString().split('T')[0];
+                if (date < today) {
+                    errors.push('Please select today or a future date');
+                    if (dateInput) dateInput.style.borderColor = '#e74c3c';
+                }
+            }
+            
+            // Show errors if any
+            if (errors.length > 0) {
+                alert('Please fix the following:\n\n• ' + errors.join('\n• '));
+                return;
+            }
+            
+            // Success - hide form and show success message
+            bookingForm.style.display = 'none';
+            if (bookingSuccess) {
+                bookingSuccess.style.display = 'block';
+                bookingSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
+            // Log booking
+            console.log('Booking submitted:', {
+                fullName: fullName,
+                email: email || 'Not provided',
+                phone: phone,
+                service: service,
+                date: date,
+                timestamp: new Date().toISOString()
+            });
+        });
+    }
+});
+    // ========== CONTACT FORM HANDLER ==========
+// ========== CONTACT FORM HANDLER ==========
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Get form elements
+    const contactForm = document.getElementById('contactForm');
+    const formHeader = document.getElementById('formHeader');
+    
+    if (contactForm) {
+        
+        // Disable browser's default validation
+        contactForm.setAttribute('novalidate', true);
+        
+        // Get all input elements
+        const fullNameInput = document.getElementById('fullName');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const subjectSelect = document.getElementById('subject');
+        const messageInput = document.getElementById('message');
+        
+        // ========== FULL NAME - Letters and spaces only ==========
+        if (fullNameInput) {
+            fullNameInput.addEventListener('input', function() {
+                // Remove numbers and special characters
+                this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+                // Capitalize first letter of each word
+                this.value = this.value.replace(/\b\w/g, function(char) {
+                    return char.toUpperCase();
+                });
+                // Remove consecutive spaces
+                this.value = this.value.replace(/\s+/g, ' ').trim();
+                
+                // Clear error styling
+                if (this.value.length >= 2) {
+                    this.style.borderColor = '#e0d5c5';
+                    hideError(this);
+                }
+            });
+        }
+        
+        // ========== EMAIL VALIDATION ==========
+        if (emailInput) {
+            emailInput.addEventListener('input', function() {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (this.value && emailPattern.test(this.value)) {
+                    this.style.borderColor = '#2ecc71';
+                    hideError(this);
+                } else if (this.value) {
+                    this.style.borderColor = '#e74c3c';
+                } else {
+                    this.style.borderColor = '#e0d5c5';
+                }
+            });
+        }
+        
+        // ========== PHONE NUMBER - Exactly 11 digits limit ==========
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function() {
+                // Remove all non-digits
+                let cleaned = this.value.replace(/\D/g, '');
+                // Limit to exactly 11 digits
+                if (cleaned.length > 11) {
+                    cleaned = cleaned.slice(0, 11);
+                }
+                this.value = cleaned;
+                
+                // Visual feedback
+                if (cleaned.length === 11) {
+                    this.style.borderColor = '#2ecc71';
+                    hideError(this);
+                } else if (cleaned.length > 0) {
+                    this.style.borderColor = '#e74c3c';
+                } else {
+                    this.style.borderColor = '#e0d5c5';
+                }
+            });
+            
+            // Prevent letters
+            phoneInput.addEventListener('keydown', function(e) {
+                if (!/^\d$/.test(e.key) && 
+                    e.key !== 'Backspace' && 
+                    e.key !== 'Delete' && 
+                    e.key !== 'ArrowLeft' && 
+                    e.key !== 'ArrowRight' && 
+                    e.key !== 'Tab') {
+                    e.preventDefault();
+                }
+            });
+        }
+        
+        // ========== FORM SUBMIT ==========
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get values
+            const fullName = fullNameInput ? fullNameInput.value.trim() : '';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const phone = phoneInput ? phoneInput.value.trim() : '';
+            const subject = subjectSelect ? subjectSelect.value : '';
+            const message = messageInput ? messageInput.value.trim() : '';
+            
+            let errors = [];
+            
+            // Reset border colors
+            const inputs = [fullNameInput, emailInput, phoneInput, subjectSelect, messageInput];
+            inputs.forEach(input => {
+                if (input) {
+                    input.style.borderColor = '#e0d5c5';
+                    hideError(input);
+                }
+            });
+            
+            // Validate Full Name
+            if (!fullName) {
+                errors.push('Full Name is required');
+                if (fullNameInput) fullNameInput.style.borderColor = '#e74c3c';
+                showError(fullNameInput, 'Full name is required');
+            } else if (fullName.length < 2) {
+                errors.push('Name must be at least 2 characters');
+                if (fullNameInput) fullNameInput.style.borderColor = '#e74c3c';
+                showError(fullNameInput, 'Name must be at least 2 characters');
+            }
+            
+            // Validate Email
+            if (!email) {
+                errors.push('Email Address is required');
+                if (emailInput) emailInput.style.borderColor = '#e74c3c';
+                showError(emailInput, 'Email address is required');
+            } else {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    errors.push('Please enter a valid email address');
+                    if (emailInput) emailInput.style.borderColor = '#e74c3c';
+                    showError(emailInput, 'Enter a valid email address');
+                }
+            }
+            
+            // Validate Phone (optional - only if entered)
+            if (phone && phone.length !== 11) {
+                errors.push('Phone number must be exactly 11 digits');
+                if (phoneInput) phoneInput.style.borderColor = '#e74c3c';
+                showError(phoneInput, 'Phone must be exactly 11 digits');
+            }
+            
+            // Validate Subject
+            if (!subject || subject === '') {
+                errors.push('Please select a subject');
+                if (subjectSelect) subjectSelect.style.borderColor = '#e74c3c';
+                showError(subjectSelect, 'Please select a subject');
+            }
+            
+            // Validate Message
+            if (!message) {
+                errors.push('Message is required');
+                if (messageInput) messageInput.style.borderColor = '#e74c3c';
+                showError(messageInput, 'Message is required');
+            } else if (message.length < 10) {
+                errors.push('Message must be at least 10 characters');
+                if (messageInput) messageInput.style.borderColor = '#e74c3c';
+                showError(messageInput, 'Message must be at least 10 characters');
+            }
+            
+            // Show errors if any
+            if (errors.length > 0) {
+                alert('Please fix the following:\n\n• ' + errors.join('\n• '));
+                return;
+            }
+            
+            // SUCCESS - Hide form header and form, show success message
+            if (formHeader) formHeader.style.display = 'none';
+            contactForm.style.display = 'none';
+            
+            // Show success message
+            showSuccessMessage(fullName);
+            
+            // Log the message
+            console.log('Contact form submitted:', {
+                fullName: fullName,
+                email: email,
+                phone: phone || 'Not provided',
+                subject: subject,
+                message: message,
+                timestamp: new Date().toISOString()
             });
         });
         
-        // Close menu when clicking overlay
-        if (navOverlay) {
-            navOverlay.addEventListener('click', toggleMenu);
+        // Helper function to show error
+        function showError(input, message) {
+            if (!input) return;
+            let errorSpan = input.parentNode.querySelector('.error-message');
+            if (!errorSpan) {
+                errorSpan = document.createElement('span');
+                errorSpan.className = 'error-message';
+                errorSpan.style.color = '#e74c3c';
+                errorSpan.style.fontSize = '11px';
+                errorSpan.style.marginTop = '5px';
+                errorSpan.style.display = 'block';
+                input.parentNode.appendChild(errorSpan);
+            }
+            errorSpan.textContent = message;
+        }
+        
+        // Helper function to hide error
+        function hideError(input) {
+            if (!input) return;
+            const errorSpan = input.parentNode.querySelector('.error-message');
+            if (errorSpan) {
+                errorSpan.remove();
+            }
+        }
+        
+        // Function to show success message
+        function showSuccessMessage(name) {
+            let successDiv = document.getElementById('contactSuccess');
+            if (!successDiv) {
+                successDiv = document.createElement('div');
+                successDiv.id = 'contactSuccess';
+                successDiv.className = 'contact-success';
+                const formPanel = document.querySelector('.contact-form-panel');
+                if (formPanel) {
+                    formPanel.appendChild(successDiv);
+                }
+            }
+            
+            successDiv.innerHTML = `
+                <div class="success-message-centered">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Message Sent!</h3>
+                    <p>Thank you for reaching out, <strong>${escapeHtml(name)}</strong>!</p>
+                    <p>We'll get back to you within 24 hours.</p>
+                    <button type="button" class="btn-new-message" onclick="resetContactForm()">Send Another Message</button>
+                </div>
+            `;
+            successDiv.style.display = 'block';
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     }
 });
 
-const phoneInput = document.getElementById('phone');
-
-phoneInput.addEventListener('input', function(e) {
-    // Remove any non-digit characters
-    this.value = this.value.replace(/\D/g, '');
+// ========== RESET CONTACT FORM FUNCTION ==========
+function resetContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    const formHeader = document.getElementById('formHeader');
+    const successDiv = document.getElementById('contactSuccess');
     
-    // Limit to 11 digits
-    if (this.value.length > 11) {
-        this.value = this.value.slice(0, 11);
+    if (contactForm) {
+        // Show form header and form
+        if (formHeader) formHeader.style.display = 'block';
+        contactForm.style.display = 'block';
+        
+        // Reset all form fields
+        contactForm.reset();
+        
+        // Reset border colors and remove error messages
+        const inputs = ['fullName', 'email', 'phone', 'subject', 'message'];
+        inputs.forEach(id => {
+            const input = document.getElementById(id);
+            if (input) {
+                input.style.borderColor = '#e0d5c5';
+                const errorSpan = input.parentNode.querySelector('.error-message');
+                if (errorSpan) errorSpan.remove();
+            }
+        });
+        
+        // Reset select styling
+        const subjectSelect = document.getElementById('subject');
+        if (subjectSelect) {
+            subjectSelect.style.borderColor = '#e0d5c5';
+        }
     }
-});
+    
+    // Hide success message
+    if (successDiv) {
+        successDiv.style.display = 'none';
+        successDiv.innerHTML = '';
+    }
+    
+    // Scroll back to form
+    setTimeout(() => {
+        if (contactForm) {
+            contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }, 100);
+}
+
+// ========== HELPER FUNCTIONS ==========
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// ========== FAQ TOGGLE FUNCTION ==========
+function toggleFAQ(element) {
+    const faqItem = element.closest('.faq-item');
+    if (faqItem) {
+        faqItem.classList.toggle('active');
+        
+        // Optional: Close other FAQ items (uncomment if desired)
+        // const allFaqs = document.querySelectorAll('.faq-item');
+        // allFaqs.forEach(item => {
+        //     if (item !== faqItem && item.classList.contains('active')) {
+        //         item.classList.remove('active');
+        //     }
+        // });
+    }
+}
+
+// ========== HAMBURGER MENU TOGGLE ==========
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+const navOverlay = document.getElementById('nav-overlay');
+const body = document.body;
+
+if (hamburger && navMenu) {
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        if (navOverlay) navOverlay.classList.toggle('active');
+        body.classList.toggle('menu-open');
+    }
+    
+    hamburger.addEventListener('click', toggleMenu);
+    
+    // Close menu when clicking on nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            if (navOverlay) navOverlay.classList.remove('active');
+            body.classList.remove('menu-open');
+        });
+    });
+    
+    // Close menu when clicking overlay
+    if (navOverlay) {
+        navOverlay.addEventListener('click', toggleMenu);
+    }
+    
+    // Close menu on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+}
 
 console.log('Jun\'s Cut Salon - Website loaded successfully! ✅');
